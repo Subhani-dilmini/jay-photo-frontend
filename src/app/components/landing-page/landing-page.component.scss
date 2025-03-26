@@ -1,0 +1,299 @@
+body {
+    /*to set background image to the landing page*/
+    background-image: url("/landing-page.jpg");
+
+    background-size: cover;
+    /* ensures the image covers the entire background */
+    background-position: center;
+    /*centers the image */
+    background-repeat: no-repeat;
+    /* prevents tiling of the image */
+    /* height: 100vh;
+    
+    /* Ensures the body takes the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-attachment: fixed;
+    /* Removes default margin */
+    /* overflow: hidden; Prevents scrolling if the image overflows */
+
+
+}
+
+
+/*
+#header {
+    position: relative;
+    top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: auto;
+    height: 15vh;
+    /*background-color: rgb(0, 0, 0);
+
+}*/
+
+
+#intro-head {
+    color: rgb(71, 248, 230);
+    font-size: 3.6em;
+    font-family: Century Schoolbook;
+}
+
+#intro {
+    color: white;
+    font-size: 1em;
+    font-family: 'Atkinson Hyperlegible Mono';
+}
+
+#carousel-img {
+    height: 400px !important;
+    border-radius: 30px;
+}
+
+#carouselExample {
+    margin-top: 0px;
+
+}
+
+#carousel-title {
+    color: rgb(105, 3, 128);
+    font-size: 1.5em;
+    padding-bottom: 0cm;
+}
+
+@media (max-width: 992px) {
+    #carouselExample {
+        width: auto;
+        height: auto;
+    }
+
+}
+
+#p1 {
+    color: rgb(0, 255, 4);
+    font-size: 1.1em;
+    font-family: 'DynaPuff';
+    padding-bottom: 0cm;
+}
+
+#self-intro {
+    text-align: center;
+    width: 75%;
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    font-family: 'Grechen Fuemen';
+
+}
+
+#self {
+    background: linear-gradient(to bottom, #000000, #009851);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+#signature {
+    align-self: center;
+}
+
+#client-say {
+    background: linear-gradient(to bottom, #009851, #000000);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#clients {
+    background: linear-gradient(to right, #000000, #370101);
+    height: 350px;
+}
+
+#test {
+    color: rgb(255, 169, 129);
+    font-size: 2em;
+    text-shadow: 4px 4px 4px rgb(224, 99, 41);
+    font-family: 'roboto flex';
+    text-align: center;
+}
+
+#what-client {
+    color: rgb(233, 148, 11);
+    font-size: 4em;
+    font-family: 'roboto flex';
+    text-align: center;
+}
+
+#feedback {
+    color: #fefefe;
+    font-size: 1.5em;
+    font-family: 'roboto flex';
+    text-align: center;
+}
+
+#client-name {
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    font-family: 'roboto flex';
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    #feedback {
+        font-size: 1em;
+    }
+
+    #client-name {
+        font-size: 1em;
+    }
+}
+
+@media (max-width:768px) {
+    #clients {
+        width: 100% !important;
+        height: auto;
+    }
+}
+
+#footer {
+    background-color: #000605;
+}
+
+#footer-head {
+    text-align: center;
+    font-size: 2em;
+    color: rgb(17, 184, 104);
+    text-shadow: 4px 4px 6px rgb(17, 184, 104);
+}
+
+#footer-content {
+    text-align: center;
+    color: rgb(139, 240, 225);
+    font-size: 1.3em;
+    font-family: 'roboto flex';
+    text-align: left;
+
+}
+
+#whatsapp-logo {
+    width: 70px;
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#footer-logo {
+    width: 400px;
+    height: 150px;
+}
+
+@media (max-width: 992px) {
+    #footer-logo {
+        width: 576px !important;
+        height: auto;
+    }
+
+    #client-name {
+        font-size: 1em;
+    }
+}
+
+#footer-icons {
+    align-self: center !important;
+}
+
+
+#fb-logo {
+    margin-left: 120px;
+}
+/*
+#insta-logo {
+    margin-left: 120px;
+}
+#tiktok-logo {
+    margin-left: 120px;
+}
+*/
+
+@media (max-width: 990px) {
+
+    #carouselExample2,
+    #client-feedback {
+        width: 100vw !important;
+        /* Full width of the viewport */
+        max-width: 100%;
+        /* Prevents overflow */
+        margin: 0;
+        /* Remove any default margins */
+        padding: 0;
+        /* Remove extra spacing */
+
+    }
+
+    .carousel-inner {
+        width: 100%;
+    }
+
+    #footer-logo {
+        width: 70vw !important;
+        /* Full width of the viewport */
+        /* Prevents overflow */
+
+        margin: 0;
+        /* Remove any default margins */
+        padding: 0;
+        /* Remove extra spacing */
+        margin-bottom: 10px;
+    }
+
+    #footer-content {
+        font-size: 1em;
+        width: 100vw !important;
+        /* Full width of the viewport */
+        max-width: 100%;
+        /* Prevents overflow */
+        margin-left: 10px;
+        /* Remove any default margins */
+        padding: 0;
+        /* Remove extra spacing */
+    }
+
+    #footer-icons {
+        width: 100vw !important;
+        /* Full width of the viewport */
+        max-width: 100%;
+        /* Prevents overflow */
+        margin: 0;
+        /* Remove any default margins */
+        padding: 0;
+        /* Remove extra spacing */
+        align-self: center;
+
+    }
+
+    #fb-logo {
+        margin-left: 80px;
+    }
+
+
+}
+
+@media (max-width:1030px)
+{
+    #fb-logo {
+        margin-left: 20px !important;
+    }
+}
+
+#tiktok-logo:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+#fb-logo:hover{
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+#insta-logo:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+}

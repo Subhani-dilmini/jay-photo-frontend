@@ -1,0 +1,114 @@
+body {
+    /*to set background image to the landing page*/
+    background-image: url("/portfolio-back.jpg");
+
+    background-size: cover;
+    /* ensures the image covers the entire background */
+    background-position: center;
+    /*centers the image */
+    background-repeat: no-repeat;
+    /* prevents tiling of the image */
+    /* height: 100vh;
+    
+    /* Ensures the body takes the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-attachment: fixed;
+    /* Removes default margin */
+    /* overflow: hidden; Prevents scrolling if the image overflows */
+
+
+}
+
+#portfolio-heading
+{
+    color: rgb(28, 238, 168);
+    font-size: 5em;
+    text-align: center;
+    margin-top: 100px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#wedding-img
+{
+    width: 600px;
+    height: 600px;
+    border-radius: 5px;
+}
+
+#birthday-img
+{
+    width: 750px;
+    height:500px;
+    border-radius: 5px;
+}
+
+#preshoot-img
+{
+    width: 750px;
+    height: 350px;
+    border-radius: 5px;
+}
+
+#graduation-img
+{
+    width: 750px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+#newborn-img
+{
+    width: 600px;
+    height: 800px;
+    border-radius: 5px;
+}
+
+#Photoshoot-img
+{
+    width: 1400px;
+    height: 450px;
+    border-radius: 5px;
+}
+
+h1 {
+    color: black;
+    background-color: rgba(15, 161, 110, 0.596);
+    border-radius: 5px;
+    text-align: center;
+}
+
+@media (max-width: 990px) {
+    .row > div {
+        width: 100%; /* Make each image container take full width */
+        flex: 0 0 100%; /* Force it to take the full row */
+        max-width: 100%; /* Ensure it spans the full width */
+    }
+
+    .row {
+        justify-content: center; /* Center align the images */
+        text-align: center;
+    }
+
+    img {
+        width: 100%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+
+    #birthday 
+    {
+        margin-bottom: 0px;
+    }
+    #preshoot 
+    {
+        margin-bottom: 50px;
+    }
+
+    #graduation
+    {
+        margin-bottom: 50px;
+    }
+}

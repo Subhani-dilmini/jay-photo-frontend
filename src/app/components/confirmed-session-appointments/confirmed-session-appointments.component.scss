@@ -1,0 +1,55 @@
+body {
+    background-color: black;
+}
+
+#heading {
+    font-family: monospace;
+    color: rgb(242, 0, 255);
+    font-weight: bolder;
+    font-size: 5em;
+}
+
+#up-session-appointments-info {
+
+    /*to set background image to the landing page*/
+    background-image: url("/acc-clear-back-1.png");
+    border-radius: 15px;
+
+}
+
+
+.info-title
+{
+    font-family: cursive;
+    font-size: 1.5em;
+    color: rgb(25, 69, 9);
+}
+
+.info-value
+{
+    font-family: cursive;
+    font-size: 1.5em;
+    color: rgb(136, 12, 61);
+}
+
+#btn-confirm, #btn-reject
+{
+    background-color: #880d86ae !important;
+    border: none;
+    color: rgb(0, 0, 0);
+    margin-left: 5%;
+    width: 90%;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#btn-request-appointment
+{
+    background-color: #0d8819ae !important;
+    border: none;
+    color: rgb(0, 0, 0);
+    margin-left: 5%;
+    width: 90%;
+    font-size: 1.5em;
+    font-weight: bold;
+}

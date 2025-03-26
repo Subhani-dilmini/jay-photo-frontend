@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landing page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--import font "Atkinson Hyperlegible Mono"-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--Atkinson Hyperlegible Mono-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Nabla&family=Rouge+Script&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!---->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=DynaPuff:wght@400..700&family=Irish+Grover&family=Nabla&family=Rouge+Script&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <!--Grechen Fuemen-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=DynaPuff:wght@400..700&family=Grechen+Fuemen&family=Irish+Grover&family=Nabla&family=Rouge+Script&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--IBM Plex Serif-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=DynaPuff:wght@400..700&family=Grechen+Fuemen&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Irish+Grover&family=Nabla&family=Rouge+Script&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!--create 2 raws which have margin of all sides 3rem. the purpose of doing this is to get 9rem (from those 2 divs 6rem + from intro div 3 rem) top margin to the introduction div-->
+    <div class="row m-5" id="first-row"></div>
+    <div class="row m-5"></div>
+
+    <!--introductoin part.-->
+    <!--first select a raw which has margin of all sides 3rem-->
+    <div class="row m-5">
+        <!--divide the row into two. the purpose of this is to align the introductoin part (one of colum from those 2 columns) in right side -->
+        <!--in here we changed the size of column allocated to both 2 columns based on the screen size-->
+        <!--this is the first column of 2 column and it in left side of the row-->
+        <div class="col-xxl-7 col-xl-6 col-lg-5 col-md-3 col-sm-0 col-0"></div>
+        <!--this is the second column (introductoin part) of 2 column and it in left side of the row-->
+        <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12">
+            <H1 class="fw-bolder justify-content-start" id="intro-head"> Professional Photographer </H1>
+            <p class="justify-content-start co" id="intro">
+                Welcome to kavishka Jay Photography.
+                Capturing Your special moments has never been easier. Our
+                platform is designed to streamline your photography
+                experience from booking to final delivery.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- create a new raw to set Carousel and set the allignment of this in the right side of the window-->
+    <div class="row m-5">
+        <!--left side of the row-->
+        <div class="col-xxl-5">
+            <div class="row mt-5 col-5"></div>
+            <div class="row mt-3 col-5"></div>
+            <pre id="p1">
+Let's take your 
+photographs to next level 
+Are you ready</pre>
+        </div>
+        <div class="col-xxl-7">
+            <div class="carousel slide " id="carouselExample" data-bs-ride="carousel" data-bs-interval="1000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/preshoot-2.jpeg" class="d-block w-100" alt="image" id="carousel-img">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/graduatoin-1.jpeg" class="d-block w-100" alt="image" id="carousel-img">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/wedding-4.jpeg" class="d-block w-100" alt="image" id="carousel-img">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/preshoot-1.jpeg" class="d-block w-100" alt="image" id="carousel-img">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/wedding-2.jpeg" class="d-block w-100" alt="image" id="carousel-img">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/birthday-1.jpeg" class="d-block w-100" alt="image" id="carousel-img">
+                    </div>
+                    <div class="carousel-item ">
+                        <img src="/wedding-3.jpeg" class="d-block w-100" alt="image" id="carousel-img">
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="self">
+        <div class="row py-5"></div>
+        <div class="row py-3"></div>
+        <!--self introduction-->
+        <div class="container-fluid centered-text" id="self-intro"> Hello, I'm Kavishka Jay, a passionate photographer
+            based
+            in beautiful Sri Lanka. I'm thrilled to connect with you and capture your special moments through my
+            lens.<br>
+            Whether it's a wedding, preshoot, birthday celebration, or graduation, I am dedicated to creating stunning
+            images that reflect the joy and emotion of your most cherished occasions.<br>
+
+            Let’s make memories that will last a lifetime, capturing the essence of your unique story through my
+            photography.<br>
+            <img src="/signature-white.png" class="container-fluid " alt="kavishka-jay" width="600px" height="150px"
+                id="signature">
+        </div>
+
+    </div>
+
+    <!--This sectoin for clients feedback title and the feedbacks as a carousel.-->
+    <!--first I create a div section to contain all of them then first there is a h2 tag and p tag both of them act like one after one rows-->
+    <!--then I created again a div section within that parent div named "client-feedback". in this div section it is like a row. I separate this row to 3 parts 
+    only for the carousel position. two div section which has 2 colums width then automatically there is a section in the center which has 8 column width section-->
+    <div class=" container-fluid text-center" id="client-say">
+        <h2 id="test">TESTIMONIALS</h2>
+        <p id="what-client">WHAT CLIENTS SAY ?</p>
+        <div class="row m-5 container-fluid text-center" id="client-feedback">
+            <div class="col-2" id="sp1"></div>
+            <div class=" col-8 mx-auto" id="clients">
+                <div class="row m-5 container-fluid "></div>
+                <div class="carousel slide " id="carouselExample2" data-bs-ride="carousel" data-bs-interval="2000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <p class="justify-content-center" id="feedback">"Kavishka Jay is an amazing photographer. He
+                                is very professional and has a great eye for detail.
+                                He made us feel comfortable and relaxed during the shoot. The photos turned out
+                                beautifully and we couldn't be happier with the results.
+                                I highly recommend Kavishka Jay Photography!"</p>
+                            <p class="justify-content-center" id="client-name"> Dilshan & Shashini </p>
+                        </div>
+                        <div class="carousel-item">
+                            <p class="justify-content-center" id="feedback">"We are beyond happy with our wedding
+                                photos! Kavishka captured every special moment beautifully. The entire process was
+                                smooth, and the results were simply stunning. Highly recommend!"</p>
+                            <p class="justify-content-center" id="client-name"> Amaya & Dilan </p>
+                        </div>
+                        <div class="carousel-item">
+                            <p class="justify-content-center" id="feedback">"I booked a session for my baby's first
+                                birthday, and the pictures came out adorable! Kavishka was so patient and creative
+                                during the shoot. The memories you gave us will last a lifetime."</p>
+                            <p class="justify-content-center" id="client-name"> Nimali R. </p>
+                        </div>
+                        <div class="carousel-item">
+                            <p class="justify-content-center" id="feedback">"Kavishka Jay Photography did an amazing job
+                                at our event! The photos were vibrant, natural, and perfectly captured the energy of the
+                                day. Great work and excellent service!"</p>
+                            <p class="justify-content-center" id="client-name"> Roshan Dewaka </p>
+                        </div>
+                        <div class="carousel-item">
+                            <p class="justify-content-center" id="feedback">"I love how easy it was to book an
+                                appointment through the new system! Plus, the session reminders were super helpful. The
+                                photos turned out fantastic. Thank you so much!"</p>
+                            <p class="justify-content-center" id="client-name"> Shanaya Olivia </p>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2" id="sp2"></div>
+        </div>
+        <div class="row "></div>
+        <div class="row "></div>
+    </div>
+
+    <div class="row container-fluid centered-text" id="footer">
+        <div class="col-6">
+           <div class="row m-3"></div>
+            <div class="row m-3">
+                <div class="col-2"> </div>
+                <div class="col-4"><a href="#first-row"> <img src="/logo.png" alt="logo" id="footer-logo"> </a></div>
+            </div>
+
+        </div>
+        <div class="col-6 row" id="footer-content">
+            <h1 id="footer-head">GET IN TOUCH</h1>
+            <p id="footer-content"> Timeless memories. Creative visions. Client-centric service. Seamless booking.
+                Artistic
+                excellence.
+                Photography redefined.</p>
+                
+                    <div class="col-2"></div>
+                    <div class="col-8" id="footer-icons">
+                        <a href="https://www.facebook.com/share/164idB8AJK/" target="_blank"> <img src="/fb-logo.png" alt="logo"
+                                id="fb-logo"> </a> 
+                        <a href="#" target="_blank"> <img src="/insta-icon.png" alt="logo" id="insta-logo"> </a>
+                        <a href="https://www.tiktok.com/@kavishka_jay_photography?_t=ZS-8u1giqMTNys&_r=1" target="_blank"> <img
+                                src="/tiktok-logo.png" alt="logo" id="tiktok-logo"> </a>
+                    </div>
+                    <div class="col-2"></div>
+                   
+                
+                <div class="row m-3 "></div>
+            
+
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

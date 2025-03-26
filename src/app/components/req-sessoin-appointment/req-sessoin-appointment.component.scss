@@ -1,0 +1,164 @@
+body {
+    /*to set background image to the landing page*/
+    background-image: url("/appointment-back.jpg");
+
+    background-size: cover;
+    /* ensures the image covers the entire background */
+    background-position: center;
+    /*centers the image */
+    background-repeat: no-repeat;
+    /* prevents tiling of the image */
+    /* height: 100vh;
+    
+    /* Ensures the body takes the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-attachment: fixed;
+    /* Removes default margin */
+    /* overflow: hidden; Prevents scrolling if the image overflows */
+
+
+}
+
+
+
+#session-req-form
+{
+    background : linear-gradient(to right, #7a041fdd 0%, #0e0197c5 100%);
+    border-radius: 30px;
+}
+
+#form-h1
+{
+    color: rgb(2, 2, 2);
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#form-p
+{
+    color: rgb(61, 46, 228);
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.form-group
+{
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: start;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+label
+{
+    color :rgb(149, 237, 249) !important;
+    font-size: 1.2em;
+}
+
+input,option,select
+{
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(162, 229, 201);
+    border: rgb(0, 11, 5);
+    height: 50px;
+}
+
+option
+{
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(190, 223, 246);
+    border: rgb(0, 11, 5);
+    height: 50px;
+}
+
+#btn-req-session
+{
+    margin-left: 60px;
+    margin-right: 50px;
+    margin-top: 20px;
+    background : linear-gradient(to bottom right, #014ed3dd 0%, #0ed70ec5 100%);
+    width: 89%;
+    border: rgb(2, 12, 49);
+    color: black;
+    font-weight: bold;
+    
+}
+
+@media (max-width: 880px) {
+    #session-req-form
+    {
+        width: 100vw;
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 1030px) {
+    #btn-req-session
+    {
+        margin-left: 40px;
+        margin-right: 50px;
+        margin-top: 20px;
+        background : linear-gradient(to bottom right, #04147add 0%, #d70ec0c5 100%);
+        width: 84%;
+        border: rgb(2, 12, 49);
+        font-size: large;
+
+    }
+}
+
+@media (max-width: 877px) {
+    #btn-req-session
+    {
+        margin-left: 40px;
+        margin-right: 50px;
+        margin-top: 20px;
+        background : linear-gradient(to bottom right, #04147add 0%, #d70ec0c5 100%);
+        width: 90%;
+        border: rgb(2, 12, 49);
+        font-size: large;
+
+    }
+}
+
+@media (max-width: 731px) {
+    #btn-req-session
+    {
+        margin-left: 40px;
+        margin-right: 50px;
+        margin-top: 20px;
+        background : linear-gradient(to bottom right, #04147add 0%, #d70ec0c5 100%);
+        width: 85%;
+        border: rgb(2, 12, 49);
+        font-size: large;
+
+    }
+}
+
+@media (max-width: 530px) {
+    #btn-req-session
+    {
+        margin-left: 40px;
+        margin-right: 50px;
+        margin-top: 20px;
+        background : linear-gradient(to bottom right, #04147add 0%, #d70ec0c5 100%);
+        width: 82%;
+        border: rgb(2, 12, 49);
+        font-size: large;
+
+    }
+}
+
+
+

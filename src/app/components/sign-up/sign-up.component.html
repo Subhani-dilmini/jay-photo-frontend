@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="row m-5"></div>
+    <div class="row m-3"></div>
+    <div class="row m-5">>
+        <div class="col-2"></div>
+        <div class="col-8" id="sign-up-form">
+            <h1 class="text-center" id="form-h1">Welcome to kavishka Jay Photography</h1>
+            <p class="text-center" id="form-p">Let's make your account</p>
+
+            <form action="sign-up.php" method="post">
+                <div class="row m-3">
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control" id="Fname" name="Fname" placeholder="First Name"
+                            required>
+                        <input type="text" class="form-control" id="Lname" name="Lname" placeholder="Last Name"
+                            required>
+                        <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Phone Number"
+                            required>
+                        <input type="text" class="form-control" id="Eaddress" name="Eaddress"
+                            placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Address"
+                            required>
+                        <input type="text" class="form-control" id="Username" name="Username" placeholder="Username"
+                            required>
+                        <input type="text" class="form-control" id="Password" name="Password" placeholder="Password"
+                            required>
+                        <input type="text" class="form-control" id="confirmPassword" name="confirmPassword"
+                            placeholder="Confirm Password" required>
+                    </div>
+                </div>
+                <!-- when we click on that create account button Success Message with Redirect
+If sign-up is successful, the user is redirected to:
+A welcome page (e.g., "Account Created Successfully").
+The login page (so they can log in with their new account).
+The home/dashboard page (if automatic login is enabled).-->
+
+                <a href="#" id="sign-up" [routerLink]="['/signup']"> <button type="submit" class="btn btn-primary" id="btn-sign-up">create account</button> </a>
+
+                <div class="row m-3"></div>
+            </form>
+
+
+
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+    <div class="row m-5"></div>
+
+</body>
+
+</html>

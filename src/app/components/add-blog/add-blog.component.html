@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row m-5"> </div>
+    <div class="row mt-5 justify-content-center" id="add-blog-head"> ADD BLOG </div>
+
+    <div class="row m-5" >
+        <div class="col-2"></div>
+        <div class="col-8" id="add-blog">
+            <div class="row m-3 justify-content-center"></div>
+            <label for="blogTitle" class="form-label" id="blog-title-heading"> Title : </label>
+            <input class="form-control" type="text" id="blogTitle">
+            <label for="blog-content" class="form-label" id="blog-content-heading"> Blog Content : </label>
+            <textarea class="form-control" type="text" id="blog-content" rows="6"></textarea>
+            <label for="imageUpload" class="form-label" id="upload-img-heading">Upload Image :</label>
+            <input class="form-control" type="file" id="imageUpload" accept="image/*">
+            <div class="row m-3"></div>
+            <a href="#"  [routerLink]="['/blog']" > <button class="btn btn-primary container-fluid" id="add-album-btn" type="submit">Add Blog</button> </a>
+            <div class="row m-4"></div>
+        </div>
+        <div class="col-2"></div>
+        <div class="row m-3"></div>
+    </div>
+</body>
+</html>

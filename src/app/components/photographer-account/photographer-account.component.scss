@@ -1,0 +1,114 @@
+body {
+    background-color: black;
+}
+
+#heading {
+    font-family: monospace;
+    color: rgb(242, 0, 255);
+    font-weight: bolder;
+    font-size: 5em;
+}
+
+.event-section, .customers-section, #shedule-section
+{
+    background-image: url("/acc-clear-back-1.png");   
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.customer-selection
+{
+    background-image: url("/acc-clear-back-1.png");   
+    background-size: cover;
+    border-radius: 15px;
+}
+.upcoming-session, .up-meeting-section, .past-session-section
+{
+    background-image: url("/acc-clear-back-2.png");
+    background-size: cover;
+    border-radius: 15px;
+}
+
+
+
+#pending-up-meeting, #customers, #confirmed-up-meeting, #events, #pending-up-session, #confirmed-up-session
+{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 2em;
+    color: rgb(5, 2, 70);
+}
+
+#pending-up-meeting-value, #Customers-value, #events-value , #confirmed-up-meeting-value, #pending-up-session-appointment-value, #confirmed-up-session-appointment-value
+{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 2em;
+    color: rgb(70, 2, 49);
+}
+
+#btn-see-more
+{
+    background-color: #880d86ae !important;
+    border: none !important;
+    color: rgb(0, 0, 0) !important;
+    margin-left: 5% !important;
+    width: 90% !important;
+    font-size: 1em !important;
+    font-weight: bold !important;
+}
+
+#appointments, #customer-details
+{
+    color:rgb(109, 93, 233);
+    font-weight: bolder;
+    font-size: 3em;
+
+}
+
+#Upcoming-Session-Appointments
+{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 3em;
+    color: rgb(5, 2, 70);
+}
+
+#up-session-value
+{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 3em;
+    color: rgb(70, 2, 49);
+}
+
+select,  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.4em;
+    border: 2px solid rgb(11, 102, 72);
+    background-color: #4172dbc8;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  
+  select:hover, input:hover {
+    border-color: #0056b3;
+  }
+  
+  select:focus, input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
+  }
+  
+  
+#customer-p
+{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 2em;
+    color: rgb(5, 2, 70);
+    text-align: left;
+    padding-left: 100px;
+}

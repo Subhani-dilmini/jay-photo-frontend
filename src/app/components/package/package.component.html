@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row m-5"></div>
+    <div class="row m-5 justify-content-center" id="package-h1"> Packages </div>
+    <div class="row m-5">
+        <div class="col-8">
+            <!-- for different screen width I used dofferent images based on screen size for that i used picture tag within that tag include default img tag and when screen size less, the small image-->
+            <picture>
+                <!-- Use package-1-text.jpg when screen width is 990px or less -->
+                <source srcset="/package-1-text.jpg" media="(max-width: 1100px)" id="small-img" class="img-fluid">
+                <!-- Default image (package-1.jpg) for larger screens -->
+                <img src="/package-1.jpg" id="package-1" alt="package-1" class="img-fluid">
+            </picture>       
+            <p class="m-2" id="package-detail"> One day wedding packages </p>
+        </div>
+        <div class="col-4"></div>
+    </div>
+    <div class="row m-5">
+        <div class="col-4"></div>
+        <div class="col-8">
+            <picture>
+                <!-- Use package-1-text.jpg when screen width is 990px or less -->
+                <source srcset="/package-2-text.jpg" media="(max-width: 1100px)" id="small-img" class="img-fluid">
+                <!-- Default image (package-1.jpg) for larger screens -->
+                <img src="/package-2.jpg" id="package-2" alt="package-2" class="img-fluid">
+            </picture> 
+            <p class="m-2" id="package-detail"> Wedding & homecoming two day packages </p>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div class="col-8">
+            <picture>
+                <!-- Use package-1-text.jpg when screen width is 990px or less -->
+                <source srcset="/package-3-text.jpg" media="(max-width: 1100px)" id="small-img" class="img-fluid">
+                <!-- Default image (package-1.jpg) for larger screens -->
+                <img src="/package-3.jpg" id="package-3" alt="package-3" class="img-fluid">
+            </picture>            
+            <p class="m-2" id="package-detail"> Engagement packages </p>
+        </div>
+        <div class="col-4"></div>
+    </div>
+    <div class="row m-5">
+        <div class="col-4"></div>
+        <div class="col-8">
+            <picture>
+                <!-- Use package-1-text.jpg when screen width is 990px or less -->
+                <source srcset="/package-4-text.jpg" media="(max-width: 1100px)" id="small-img" class="img-fluid">
+                <!-- Default image (package-1.jpg) for larger screens -->
+                <img src="/package-4.jpg" id="package-4" alt="package-4" class="img-fluid">
+            </picture>               
+            <p class="m-2" id="package-detail"> Preshoot packages </p>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <picture>
+                <!-- Use package-1-text.jpg when screen width is 990px or less -->
+                <source srcset="/package-rules-text.jpg" media="(max-width: 1100px)" id="small-img" class="img-fluid">
+                <!-- Default image (package-1.jpg) for larger screens -->
+                <img src="/package-rules.jpg" id="package-rules" alt="package-rules" class="img-fluid">
+            </picture>  
+           
+            <p class="m-2" id="package-detail"> Terms and conditions </p>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row m-5">
+        <div class="col-3"></div>
+        <div class="col-6">
+           <a href="#" [routerLink]="['/add-package']"> <button class="btn" id="btn-add-package"> Add Package </button>  </a> 
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row m-5"></div>
+    
+</body>
+</html>

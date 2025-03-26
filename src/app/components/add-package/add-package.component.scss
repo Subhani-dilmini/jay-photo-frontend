@@ -1,0 +1,96 @@
+body {
+    /*to set background image to the landing page*/
+    background-image: url("/portfolio-category-back.jpg");
+
+    background-size: cover;
+    /* ensures the image covers the entire background */
+    background-position: center;
+    /*centers the image */
+    background-repeat: no-repeat;
+    /* prevents tiling of the image */
+    /* height: 100vh;
+    
+    /* Ensures the body takes the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-attachment: fixed;
+    /* Removes default margin */
+    /* overflow: hidden; Prevents scrolling if the image overflows */
+
+
+}
+
+#add-package-head
+{
+    font-size: 5em;
+    font-weight: bold;
+    color: rgb(132, 205, 29);
+    margin-top: 10%;
+}
+
+
+#add-package
+{
+    background: linear-gradient(to right, #77116bb9, #051d95bf);
+    padding-right: 2%;
+    padding-left: 2%;
+    border-radius: 10px;
+}
+
+#package-price-heading, #package-title-heading, #package-category-heading, #package-item-heading
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(67, 230, 181);
+}
+
+#packageTitle, #PackageCategory, #packagePrice, #item
+{
+    background-color: rgba(146, 231, 239, 0.792);
+    border: rgb(5, 5, 86);
+}
+
+#btn-plus
+{
+    background-color: rgb(5, 5, 86);
+    color: white;
+    font-size: 1.5em;
+    border-radius: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+    
+#add-package-btn
+{
+    background-color: rgb(5, 5, 86);
+    color: white;
+    font-size: 1.5em;
+    border-radius: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+@media (max-width:1000px)
+{
+    .row > div {
+        width: 100%; /* Make each image container take full width */
+        flex: 0 0 100%; /* Force it to take the full row */
+        max-width: 100%; /* Ensure it spans the full width */
+    }
+
+    .row {
+        justify-content: center; /* Center align the images */
+        text-align: center;
+    }
+
+    #add-package
+    {
+        width: 100%; /* Make each image container take full width */
+        flex: 0 0 100%; /* Force it to take the full row */
+        max-width: 100%; /* Ensure it spans the full width */
+        align-content: center !important;
+    }
+
+    
+}

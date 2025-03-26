@@ -1,0 +1,129 @@
+body {
+    /*background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(3, 66, 65),black);*/
+
+
+    /*to set background image to the landing page*/
+    background-image: url("/blog-back.jpg");
+
+    background-size: cover;
+    /* ensures the image covers the entire background */
+    background-position: center;
+    /*centers the image */
+    background-repeat: no-repeat;
+    /* prevents tiling of the image */
+    /* height: 100vh;
+        
+        /* Ensures the body takes the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-attachment: fixed;
+    /* Removes default margin */
+    /* overflow: hidden; Prevents scrolling if the image overflows */
+
+
+
+}
+#blog-heading
+{
+    color: rgb(46, 6, 244);
+    font-weight: bolder;
+    font-size: 6em;
+}
+
+#blog-img
+{
+    width:fit-content;
+    height: fit-content;
+    margin-left: 30%;
+    margin-right: 25%;
+    border-radius: 5px;
+}
+
+
+
+
+#blog-content
+{
+    padding-left: 150px;    
+    padding-right: 150px;
+    border-radius: 5px;
+    font-family: cursive;
+    background-color: rgba(0, 0, 0, 0.571);
+    
+}
+
+p{
+    color: rgb(179, 237, 232);
+    font-size: 1.5em;
+}
+
+#btn-edit-blog
+{
+    background-color: #5b15b7 !important;
+    border: none;
+    color: black;
+    margin-left: 5%;
+    width: 90%;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+
+    #blog-heading {
+        font-size: 5em;
+    } 
+        
+    #blog-img {
+        width: fit-content;
+        height: fit-content;
+        margin-left: 10%;
+        margin-right: 25%;
+        border-radius: 5px;
+    }
+
+    #blog-content
+   {
+      padding-left: 100px;    
+      padding-right: 100px;
+      border-radius: 5px;
+      font-family: cursive;
+      background-color: rgba(0, 0, 0, 0.571);
+    
+  }
+
+  .col-5
+  {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 600px) {
+
+    #blog-heading {
+        font-size: 4em;
+    } 
+    .col-10 {
+        width: 100% !important; /* Make the text section take full width */
+    }
+
+    
+    #blog-img {
+        width: fit-content;
+        height: fit-content;
+        margin-left: 3%;
+        margin-right: 3%;
+        border-radius: 5px;
+    }
+
+    #blog-content
+   {
+      padding-left: 30px;    
+      padding-right: 30px;
+      border-radius: 5px;
+      font-family: cursive;
+      background-color: rgba(0, 0, 0, 0.571);
+    
+  }
+}

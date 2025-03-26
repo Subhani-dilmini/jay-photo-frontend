@@ -1,0 +1,86 @@
+body {
+    /*to set background image to the landing page*/
+    background-image: url("/package-background (2).jpg");
+
+    background-size: cover;
+    /* ensures the image covers the entire background */
+    background-position: center;
+    /*centers the image */
+    background-repeat: no-repeat;
+    /* prevents tiling of the image */
+    /* height: 100vh;
+    
+    /* Ensures the body takes the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-attachment: fixed;
+    /* Removes default margin */
+    /* overflow: hidden; Prevents scrolling if the image overflows */
+
+
+}
+
+#package-h1
+{
+    font-size: 7em;
+    color: rgb(230, 71, 97);
+    text-align: center !important;
+    font-weight: bold;
+}
+
+img
+{
+    width: 920px;
+    height: 600px;
+    border-radius: 10px;
+}
+
+p
+{
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(171, 69, 88);
+    border-radius: 3px;
+}
+
+#btn-add-package
+{
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: 1.5em;
+    font-family:cursive;
+    background-color: rgb(0, 147, 10);
+    border-radius: 5px;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50% !important;
+}
+
+@media (max-width: 1440px) {
+    .col-8 {
+        width: 100% !important; /* Make the text section take full width */
+    }
+
+    .col-4 {
+        display: none; /* Hide the image container */
+    }
+
+    p 
+    {
+        width: 70%;
+    }
+}
+
+
+
+
+@media (max-width: 560px) {
+    #package-h1
+    {
+        font-size: 5em;
+    }
+}
+

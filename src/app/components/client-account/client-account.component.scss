@@ -1,0 +1,171 @@
+body {
+    background-color: black;
+}
+
+#heading {
+    font-family: monospace;
+    color: rgb(242, 0, 255);
+    font-weight: bolder;
+    font-size: 5em;
+}
+
+#personal-info {
+
+    /*to set background image to the landing page*/
+    background-image: url("/acc-clear-back-1.png");
+    border-radius: 15px;
+
+}
+
+#client-img
+{
+    width: 200px !important;
+    height: 200px !important;
+}
+
+#name
+{
+    font-family: cursive;
+    font-weight: bolder;
+    font-size: 3em;
+    color: black;
+}
+
+.info-title
+{
+    font-family: cursive;
+    font-size: 1.5em;
+    color: rgb(25, 69, 9);
+}
+
+#email, #phone-number, #address
+{
+    font-family: cursive;
+    font-size: 1.5em;
+    color: rgb(136, 12, 61);
+}
+
+#btn-edit-profile
+{
+    background-color: #880d86ae !important;
+    border: none;
+    color: rgb(0, 0, 0);
+    margin-left: 5%;
+    width: 90%;
+    font-size: 0.6em;
+    font-weight: bold;
+}
+
+.upcoming-session, .up-meeting-section, .past-session-section
+{
+    background-image: url("/album-5.webp");
+    background-size: cover;
+    border-radius: 15px;
+}
+
+#appointments
+{
+    color:rgb(109, 93, 233);
+    font-weight: bolder;
+    font-size: 3em;
+
+}
+
+#Upcoming-Session-Appointments
+{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 3em;
+    color: rgb(5, 2, 70);
+}
+
+#up-session-value
+{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 3em;
+    color: rgb(70, 2, 49);
+}
+
+#btn-see-more
+{
+    background-color: #880d86ae !important;
+    border: none !important;
+    color: rgb(0, 0, 0) !important;
+    margin-left: 5% !important;
+    width: 90% !important;
+    font-size: 0.7em !important;
+    font-weight: bold !important;
+}
+
+
+#Upcoming-Meeting-Appointments, #past-session
+{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 2em;
+    color: rgb(5, 2, 70);
+}
+
+#up-meeting-value, #past-session-value
+{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 2em;
+    color: rgb(70, 2, 49);
+}
+
+a {
+    text-decoration: none; /* Removes underline */
+    color: #6fff00; /* Default link color */
+    font-weight: bold;
+    font-size: 2.6em;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+  
+a:hover {
+    color: #d840af; /* Darker shade on hover */
+    text-decoration: underline; /* Underline on hover */
+    text-decoration: none;
+    font-size: 3em;
+  }
+
+  @media (max-width: 800px)
+  {
+    #email-div
+    {
+        margin-bottom: 15px;
+    }
+
+    #number-div
+    {
+        margin-bottom: 15px;
+    }
+    #Upcoming-Meeting-Appointments, #past-session
+    {
+       
+      font-size: 1.5em ;
+    }
+
+    .col-6 .up-meeting-section
+    {
+        width: 100% !important;
+    }
+
+    .col-5 .past-session-section
+    {
+        width: 100% !important;
+    }
+
+    .col-5, .info-title
+    {
+        width: 100% !important;
+    }
+
+    .col-7 #email, #phone-number, #address
+    {
+        width: 100% !important;
+    }
+  }
+  
+

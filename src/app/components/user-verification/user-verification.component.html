@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+</head>
+
+<body>
+    <div class="row m-5"></div>
+    <div class="row m-5"></div>
+    <div class="row m-5"></div>
+    <div class="row m-5">
+        <div class="col-2"></div>
+        <div class="col-8" id="verificatoin-form">
+            <div class="row m-3"></div>
+            <h1 class="text-center" id="form-h1">Enter Verification Code</h1>
+            <p class="text-center" id="form-p">We will send you a message to set or reset your new password</p>
+            <form (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" id="email-phone" name="email-phone"
+                        placeholder="Enter OTP here" required>
+                </div>
+            </form>
+                      
+
+            <a href="#" id="forget-password" [routerLink]="['/reset-password']" > <button type="submit" class="btn btn-primary" id="btn-confirm"> Confirm </button> </a>
+            <div class="row m-3"></div>
+        </div>
+        <div class="col-2"></div>
+        <div class="row m-5"></div>
+    </div>
+</body>
+
+</html>

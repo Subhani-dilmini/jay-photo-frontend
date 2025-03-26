@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="row m-5"> </div>
+    <div class="row mt-5 justify-content-center" id="portfolio-category-head"> Wedding </div>
+
+    <div class="row m-5 container-fluid" id="portfolio-category-big-small-row">
+        <!--<a href="#" [routerLink]="['portfolio-hiran&nathasha']">-->
+            <div class="col-5" id="vertical">
+                <div class="row m-3"></div>
+                <div class="row m-1">
+                   <a href="#" [routerLink]="['/portfolio-hiranNathasha']"> <img src="/wedding-cat-1.jpg" alt="portfolio" class="img-fluid" id="row-1-img-1"> </a>
+                </div>
+                <div class="row mt-2"></div>
+                <p class="text-center" id="album-name"> Hiran & Nathasha </p>
+            </div>
+        <!--</a> -->       
+        <div class="col-1"></div>
+        <div class="col-6" id="horizontal">
+            <div class="row m-3"></div>
+            <div class="row mt-5">
+                <img src="/wedding-cat-2.jpg" alt="portfolio" class="img-fluid" id=row-1-img-2>
+            </div>
+            <div class="row mt-2"></div>
+            <p class="text-center" id="album-name"> shihan & dehini </p>
+        </div>
+    </div>
+
+
+    <!--
+    <div class="row m-5 container-fluid" id="portfolio-category-small-big-row">
+        <div class="col-6">
+            <div class="row m-5"></div>
+            <div class="row m-1">
+                <img src="/wedding-cat-4.jpg" alt="portfolio" class="img-fluid" id="row-2-img-1">
+            </div>
+            <div class="row mt-2"></div>
+            <p class="text-center" id="album-name"> kasuni & jananga </p>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-5">
+            <div class="row m-1">
+                <img src="/wedding-cat-3.jpg" alt="portfolio" class="img-fluid" id=row-2-img-2>
+            </div>
+            <div class="row mt-2"></div>
+            <p class="text-center" id="album-name"> sajana & maneesha </p>
+        </div>
+    </div>
+    -->
+
+    <div class="row m-5" >
+        <div class="col-2"></div>
+        <div class="col-8" id="add-album">
+            <div class="row m-3 justify-content-center"></div>
+            <label for="albumName" class="form-label" id="albumName-heading"> Album Name : </label>
+            <input class="form-control" type="text" id="albumName">
+            <label for="imageUpload" class="form-label" id="upload-img-heading">Upload Image</label>
+            <input class="form-control" type="file" id="imageUpload" accept="image/*">
+            <div class="row m-3"></div>
+            <button class="btn btn-primary container-fluid" id="add-album-btn" type="submit">Add Album</button>
+            <div class="row m-4"></div>
+        </div>
+        <div class="col-2"></div>
+        <div class="row m-3"></div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

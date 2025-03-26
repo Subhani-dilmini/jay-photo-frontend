@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row m-5"></div>
+    <div class="row m-5">
+        <div class="col-2"></div>
+        <div class="col-8" id="meeting-req-form">
+            <div class="row m-3"></div>
+            <h1 class="text-center" id="form-h1">Welcome to kavishka Jay Photography</h1>
+            <p class="text-center" id="form-p"> Let's make a meeting appointment </p>
+            <form action="sign-up.php" method="post">
+                <div class="form-group">
+                    <label for="FullName">Full Name :</label>
+                    <input type="text" class="form-control" id="FullName" name="FullName" placeholder="Full Name"
+                        required>
+                    <label for="EmailAddress">Email Address :</label>
+                    <input type="email" class="form-control" id="EmailAddress" name="EmailAddress" placeholder="Email Address"
+                        required>
+                        <label for="Phonenumber">Phone number :</label>
+                    <input type="tel" class="form-control" id="Phonenumber" name="Phonenumber" placeholder="Phone number"
+                        required>
+                    <label for="date">Preferred date :</label>
+                    <input type="date" class="form-control" id="date" name="date" placeholder="date"
+                        required>
+                        <label for="time">Preferred time :</label>
+                    <input type="time" class="form-control" id="time" name="time" placeholder="time"
+                        required>
+                    <label for="meeting-Mode">Preferred meeting mode :</label>
+                    <select class="form-select" id="meeting-Mode">
+                        <option>meeting mode</option>
+                        <option value="Physical">Physical</option>
+                        <option value="virtual">virtual</option>
+                    </select>
+                        <label for="note">Additional note :</label>
+                    <input type="text" class="form-control" id="note" name="note" placeholder="Additional note">
+                    
+                      
+                </div>
+            </form>
+            
+
+            <a href="#" [routerLink]="['/upcoming-meeting-appointments']" > <button type="submit" class="btn btn-primary" id="btn-req-meeting"> Request Appointment </button> </a>
+            <div class="row m-3"></div>
+        </div>
+        <div class="col-2"></div>
+        <div class="row m-5"></div>
+    </div>
+</body>
+</html>
+
