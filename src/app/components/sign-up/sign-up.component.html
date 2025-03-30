@@ -15,27 +15,26 @@
         <div class="col-8" id="sign-up-form">
             <h1 class="text-center" id="form-h1">Welcome to kavishka Jay Photography</h1>
             <p class="text-center" id="form-p">Let's make your account</p>
-
-            <form action="sign-up.php" method="post">
+            <form [formGroup]="signUpForm">
                 <div class="row m-3">
                     <div class="form-group col-6">
-                        <input type="text" class="form-control" id="Fname" name="Fname" placeholder="First Name"
+                        <input type="text" class="form-control" id="Fname" placeholder="First Name" formControlName="Fname"
                             required>
-                        <input type="text" class="form-control" id="Lname" name="Lname" placeholder="Last Name"
+                        <input type="text" class="form-control" id="Lname" placeholder="Last Name" formControlName="Lname"
                             required>
-                        <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Phone Number"
+                        <input type="text" class="form-control" id="Phone" placeholder="Phone Number" formControlName="Phone"
                             required>
-                        <input type="text" class="form-control" id="Eaddress" name="Eaddress"
+                        <input type="text" class="form-control" id="Eaddress" formControlName="Eaddress"
                             placeholder="Email Address" required>
                     </div>
                     <div class="form-group col-6">
-                        <input type="text" class="form-control" id="address" name="address" placeholder="Address"
+                        <input type="text" class="form-control" id="address" placeholder="Address" formControlName="address"
                             required>
-                        <input type="text" class="form-control" id="Username" name="Username" placeholder="Username"
+                        <input type="text" class="form-control" id="Username" placeholder="Username" formControlName="Username"
                             required>
-                        <input type="text" class="form-control" id="Password" name="Password" placeholder="Password"
+                        <input type="password" class="form-control" id="Password" placeholder="Password" formControlName="Password"
                             required>
-                        <input type="text" class="form-control" id="confirmPassword" name="confirmPassword"
+                        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword"
                             placeholder="Confirm Password" required>
                     </div>
                 </div>
@@ -45,7 +44,8 @@ A welcome page (e.g., "Account Created Successfully").
 The login page (so they can log in with their new account).
 The home/dashboard page (if automatic login is enabled).-->
 
-                <a href="#" id="sign-up" [routerLink]="['/signup']"> <button type="submit" class="btn btn-primary" id="btn-sign-up">create account</button> </a>
+
+               <!-- <a href="#" id="sign-up" [routerLink]="['/signup']"> --> <button type="button" class="btn btn-primary" id="btn-sign-up" (click)="onSubmit()">create account</button> <!--</a>-->
 
                 <div class="row m-3"></div>
             </form>
