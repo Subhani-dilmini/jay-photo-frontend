@@ -25,13 +25,13 @@ export class SignUpComponent {
     )
    {
     this.signUpForm = this.formBuilder.group({
-      Fname: new FormControl('', Validators.required),
-      Lname: new FormControl('', Validators.required),
-      Phone: new FormControl('', Validators.required),
-      Eaddress: new FormControl('', Validators.required),
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      phoneNumber: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
-      Username: new FormControl('', Validators.required),
-      Password: new FormControl('', Validators.required),
+      username: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
       confirmPassword: new FormControl('', Validators.required),
     });
   }
@@ -43,19 +43,19 @@ export class SignUpComponent {
       return;
     }*/
 
-      if(!this.signUpForm.valid || this.signUpForm.value.Password !== this.signUpForm.value.confirmPassword){
+      if(!this.signUpForm.valid || this.signUpForm.value.password !== this.signUpForm.value.confirmPassword){
         this.errorMessage = 'Passwords do not match';
         return;
       }
       
     this.authService.signUp(
-      this.signUpForm.value.Fname, 
-      this.signUpForm.value.Lname, 
-      this.signUpForm.value.Phone,
-      this.signUpForm.value.Eaddress, 
-      this.signUpForm.value.address, 
-      this.signUpForm.value.Username, 
-      this.signUpForm.value.Password
+      this.signUpForm.value.firstName, 
+      this.signUpForm.value.lastName, 
+      this.signUpForm.value.phoneNumber,
+      this.signUpForm.value.email, 
+      this.signUpForm.value.email, 
+      this.signUpForm.value.username, 
+      this.signUpForm.value.password
     ).subscribe({
       next: (response: any) => {
         console.log('User registered successfully');  

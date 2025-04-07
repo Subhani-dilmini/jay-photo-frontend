@@ -33,9 +33,9 @@ export class AuthService {
     return this.http.post<any>(this.baseUrl + 'register', body, { headers });
   }*/
 
-    signUp(Fname: string, Lname: string, Phone: string, Eaddress: string, address: string, Username: string, Password: string): Observable<any> {
+    signUp(firstName: string, lastName: string, phoneNumber: string, email: string, address: string, username: string, password: string): Observable<any> {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      const body = { Fname, Lname, Phone, Eaddress, address, Username, Password };
+      const body = { firstName, lastName, phoneNumber, email, address, username, password };
     
       return this.http.post<any>(this.baseUrl + 'register', body, { headers }).pipe(
         map((response: any) => {
