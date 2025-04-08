@@ -74,7 +74,7 @@ export const routes: Routes = [
     component: PortfolioComponent
   },
   {
-    path: 'portfolio-category',
+    path: 'portfolio-category/:id',
     component: PortfolioCategoryComponent
   },
   {
