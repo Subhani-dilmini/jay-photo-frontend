@@ -10,91 +10,20 @@
     <div class="row m-5 justify-content-center" id="portfolio-heading"> portfolio </div>
 
     <div class="row m-5" > 
+        @for(category of portFolio; track category.id){
         <div class="col-5" id="wedding">
             <!--in here we try to link wedding portfolio page for that-->
-            <a href="#" [routerLink]="['/portfolio-category']" > 
+            <a href="#" [routerLink]="['/portfolio-category', category.categoryName]"
+            > 
                 <img src="/wedding-portfolio.jpeg" alt="wedding" class="img-fluid" id="wedding-img"> 
             </a>
             <div class="row m-1"></div>
-            <h1> Wedding </h1>
+            <h1> {{category.categoryName}} </h1>
         </div>
         <div class="col-1"></div>
-        <div class="col-6" id="birthday">
-            <div class="row m-4"></div>
-            <!--in here we try to link birthday portfolio page for that-->
-            <a href="#" >
-                <picture >
-                    <!-- Use package-1-text.jpg when screen width is 990px or less   [portfolio-category]-->
-                    <source srcset="/birthday-2.jpeg" media="(max-width: 600px)" id="small-img" class="img-fluid"> 
-                    <!-- Default image (package-1.jpg) for larger screens -->
-                    <img src="/birthday-1.jpeg" alt="birthday" class="img-fluid" id="birthday-img" >  
-                </picture>     
-            </a>            
-            <div class="row m-1"></div>
-            <h1> Birthday </h1>
-            <div class="row m-5"></div>
-        </div>
+    }
     </div>
 
-    <div class="row m-1"></div>
-
-    <div class="row m-5" > 
-        <div class="col-6" >
-            <div class="row" id="preshoot">
-                <!--in here we try to link preshoot portfolio page for that-->
-                <a href="#"> <img src="/preshoot-2.jpeg" alt="preshoot" class="img-fluid" id="preshoot-img"> </a> 
-                <div class="row m-1"></div>               
-                <h1> Preshoot </h1>
-            </div>
-            <div class="row m-3"></div>
-            <div class="row" id="graduation">
-                <!--in here we try to link preshoot portfolio page for that-->
-
-                <a href="#">
-                    <picture>
-                        <!-- Use package-1-text.jpg when screen width is 990px or less -->
-                        <source srcset="/graduation.2.jpeg" media="(max-width: 530px)" id="small-img" class="img-fluid"> 
-                        <!-- Default image (package-1.jpg) for larger screens -->
-                        <img src="/graduation-portfolio.jpeg" alt="graduation" class="img-fluid" id="graduation-img">  
-                    </picture>     
-                </a> 
-
-                
-                <div class="row m-1"></div>
-                <h1> Graduation </h1>
-            </div>
-        </div>
-        <div class="col-1"></div>
-        <div class="col-5" id="newborn">
-            <!--in here we try to link graduation portfolio page for that-->
-            <a href="#"> <img src="/newborn-portfolio.jpeg" alt="newborn" class="img-fluid" id="newborn-img"> </a>
-            <div class="row m-1"></div> 
-            <h1> Newborn </h1>
-        </div>
-    </div>
-
-    <div class="row m-1"></div>
-
-    <div class="row m-5" > 
-        <div class="col-1"></div>
-        <div class="col-10" id="Photoshoot">
-            <!--in here we try to link Photoshoot portfolio page for that-->
-            <a href="#">
-            <picture>
-                <!-- Use package-1-text.jpg when screen width is 990px or less -->
-                <source srcset="/photoshoot-2.jpeg" media="(max-width: 530px)" id="small-img" class="img-fluid"> 
-                <!-- Default image (package-1.jpg) for larger screens -->
-                <img src="/photoshoot-1.jpeg" alt="Photoshoot" class="img-fluid" id="Photoshoot-img"> 
-            </picture>     
-            </a>        
-            <div class="row m-1"></div>
-            <h1> Photoshoot </h1>
-        </div>
-        <div class="col-1"></div>
-        
-    
-       
-    </div>
 
     
     <div class="row m-3"></div>

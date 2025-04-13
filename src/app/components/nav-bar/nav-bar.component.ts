@@ -15,6 +15,7 @@ export class NavBarComponent implements OnInit {
   isLogged = false;
   constructor(private authService: AuthService) { }
 
+  //ngOnInit -> This is a lifecycle hook in Angular that gets called once the component is initialized.
   ngOnInit(): void {
     this.authService.isLogged.subscribe((logged: boolean) => {
       this.isLogged = logged;
