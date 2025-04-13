@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
   selector: 'app-portfolio-category',
@@ -8,12 +9,19 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
   styleUrl: './portfolio-category.component.scss'
 })
 export class PortfolioCategoryComponent implements OnInit{
-  category: string = '';
+  categoryId: string = '';
+  category: any;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private portfolioService: PortfolioService
+  ) {}
 
   ngOnInit() {
-    this.category = this.route.snapshot.paramMap.get('id')!;
+    this.categoryId = this.route.snapshot.paramMap.get('id')!;
+    this.portfolioService.getAlbumsByCategoryId(parseInt(this.categoryId)).subscribe(data => {
+      this.category = data;
+    })
   }
   
 
