@@ -15,8 +15,13 @@ export class PortfolioService {
   getPortfolios(): Observable<any> {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', 'Bearer ' + localStorage.getItem('token'));
     return this.http.get(this.baseUrl + 'categories', {headers});
+  }
+
+  getAlbumsByCategoryId(id: number): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.baseUrl + 'categories/' + id + '/albums', {headers});
   }
   
 }

@@ -13,7 +13,7 @@
         @for(category of portFolio; track category.id){
         <div class="col-5" id="wedding">
             <!--in here we try to link wedding portfolio page for that-->
-            <a href="#" [routerLink]="['/portfolio-category', category.categoryName]"
+            <a href="#" [routerLink]="['/portfolio-category', category.id]"
             > 
                 <img src="/wedding-portfolio.jpeg" alt="wedding" class="img-fluid" id="wedding-img"> 
             </a>
