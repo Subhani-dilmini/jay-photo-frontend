@@ -47,13 +47,13 @@ export class SignUpComponent {
         this.errorMessage = 'Passwords do not match';
         return;
       }
-      
+
     this.authService.signUp(
       this.signUpForm.value.firstName, 
       this.signUpForm.value.lastName, 
       this.signUpForm.value.phoneNumber,
       this.signUpForm.value.email, 
-      this.signUpForm.value.email, 
+      this.signUpForm.value.address, 
       this.signUpForm.value.username, 
       this.signUpForm.value.password
     ).subscribe({

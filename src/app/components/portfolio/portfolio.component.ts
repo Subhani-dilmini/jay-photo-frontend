@@ -10,6 +10,7 @@ import { CommonModule, NgFor } from '@angular/common';
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent implements OnInit{
+  //global variable to store the portfolio data to be displayed in the template(html)
   portFolio: any[] = [];
 
   constructor(private portfolioService: PortfolioService) { }
