@@ -1,6 +1,6 @@
 body {
     /*to set background image to the landing page*/
-    background-image: url("/portfolio-category-back.jpg");
+    background-image: url("/portfolio-back.jpg");
 
     background-size: cover;
     /* ensures the image covers the entire background */
@@ -23,10 +23,12 @@ body {
 
 #portfolio-category-head
 {
+    color: rgb(28, 238, 168);
     font-size: 5em;
+    text-align: center;
+    margin-top: 100px;
     font-weight: bold;
-    color: rgb(42, 207, 219);
-    margin-top: 10%;
+    border-radius: 10px;
 }
 
 
@@ -180,14 +182,14 @@ img:hover
         border-radius: 10px;
     }
     
-    #upload-img-heading, #blog-title-heading, #blog-content-heading, #blog-update-date-heading
+    #blog-title-heading, #blog-update-date-heading, #upload-img-heading
     {
         font-size: 1.5em;
         font-weight: bold;
         color: rgb(67, 230, 181);
     }
     
-    #blogTitle, #blog-content, #blog-update-date
+    #albumTitle, #album-update-date, #imageUpload
     {
         background-color: rgba(146, 231, 239, 0.792);
         border: rgb(5, 5, 86);
@@ -213,6 +215,13 @@ img:hover
         padding-bottom: 2px;
     }
     
+    h1 {
+        color: black;
+        background-color: rgba(15, 161, 110, 0.596);
+        border-radius: 5px;
+        text-align: center;
+    }
+
     @media (max-width:1000px)
     {
         .row > div {
@@ -226,7 +235,7 @@ img:hover
             text-align: center;
         }
     
-        #add-blog
+        #add-album 
         {
             width: 100%; /* Make each image container take full width */
             flex: 0 0 100%; /* Force it to take the full row */

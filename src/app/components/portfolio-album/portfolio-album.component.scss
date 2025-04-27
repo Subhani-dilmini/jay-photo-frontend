@@ -1,6 +1,6 @@
 body {
     /*to set background image to the landing page*/
-    background-image: url("/album-backg.webp");
+    background-image: url("/portfolio-back.jpg");
 
     background-size: cover;
     /* ensures the image covers the entire background */
@@ -23,10 +23,12 @@ body {
 
 #portfolio-album-head
 {
+    color: rgb(28, 238, 168);
     font-size: 5em;
+    text-align: center;
+    margin-top: 100px;
     font-weight: bold;
-    color: rgb(42, 207, 219);
-    margin-top: 10%;
+    border-radius: 10px;
 }
 
 
