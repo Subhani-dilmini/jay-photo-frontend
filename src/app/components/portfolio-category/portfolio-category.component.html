@@ -11,13 +11,14 @@
     <div class="row m-5"> </div>
     <div class="row mt-5 justify-content-center" id="portfolio-category-head"> {{category.categoryName}} </div>
 
-    @for(album of category.albums; track album.id) {
+    @for(album of category.albums; track album.albumId) {
         <div class="row m-5 container-fluid" id="portfolio-category-big-small-row">
             <!--<a href="#" [routerLink]="['portfolio-hiran&nathasha']">-->
                 <div class="col-5" id="vertical">
                     <div class="row m-3"></div>
                     <div class="row m-1">
-                    <a href="#" [routerLink]="['/portfolio-hiranNathasha']"> <img src="/wedding-cat-1.jpg" alt="portfolio" class="img-fluid" id="row-1-img-1"> </a>
+                    <a href="#" [routerLink]="['/portfolio-album', album.albumId]"> 
+                        <img src="/wedding-cat-1.jpg" alt="portfolio" class="img-fluid" id="row-1-img-1"> </a>
                     </div>
                     <div class="row mt-2"></div>
                     <p class="text-center" id="album-name"> {{album.albumName}} </p>
@@ -33,19 +34,7 @@
 <<<<<<< Updated upstream
                 <p class="text-center" id="album-name"> shihan & dehini </p>
             </div> -->
-=======
-                  <p class="text-center" id="album-name"> Hiran & Nathasha </p>
-            </div>
-        <!--</a> -->       
-        <div class="col-1"></div>
-        <div class="col-6" id="horizontal">
-            <div class="row m-3"></div>
-            <div class="row mt-5">
-                <img src="/wedding-cat-2.jpg" alt="portfolio" class="img-fluid" id=row-1-img-2>
-            </div>
-            <div class="row mt-2"></div>
-            <p class="text-center" id="album-name"> shihan & dehini </p>
->>>>>>> Stashed changes
+
         </div>
     }
 
@@ -88,6 +77,25 @@
     </div> -->
 
 
+    <div class="row m-5"  >
+        <div class="col-2"></div>
+        <form [formGroup]="addAlbumForm">
+        <div class="col-8" id="add-blog">
+            <div class="row m-3 justify-content-center"></div>
+            <label for="blogTitle" class="form-label" id="blog-title-heading" > Album Name : </label>
+            <input class="form-control" type="text" id="blogTitle" formControlName="albumName">
+            <label for="blog-update-date" class="form-label" id="blog-update-date-heading"> Published Date : </label>
+            <input class="form-control" type="date" id="blog-update-date" formControlName="publishedDate">
+            <label for="imageUpload" class="form-label" id="upload-img-heading">Upload Key Image</label>
+            <input class="form-control" type="file" id="imageUpload" accept="image/*">
+            <div class="row m-3"></div>
+            <button class="btn btn-primary container-fluid" id="add-album-btn" type="button" (click)="onSubmit()">Add Album</button>
+            <div class="row m-4"></div>
+        </div>
+        </form>
+        <div class="col-2"></div>
+        <div class="row m-3"></div>
+    </div>
 
 
 

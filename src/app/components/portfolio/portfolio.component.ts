@@ -25,5 +25,9 @@ export class PortfolioComponent implements OnInit{
     
   }
 
+  getCategory(){
+    
+  }
+
   
 }

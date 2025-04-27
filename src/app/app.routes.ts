@@ -78,7 +78,7 @@ export const routes: Routes = [
     component: PortfolioCategoryComponent
   },
   {
-    path: 'portfolio-hiranNathasha',
+    path: 'portfolio-album/:id',
     component: PortfolioAlbumComponent
   },
   {
