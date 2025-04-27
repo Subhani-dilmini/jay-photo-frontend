@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormControl, FormGroup, ReactiveFormsModule,Validators } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { PortfolioService } from '../../services/portfolio.service';
+import { AuthService, MyToken } from '../../services/auth.service';
 
 @Component({
   selector: 'app-portfolio-category',
@@ -14,11 +15,14 @@ export class PortfolioCategoryComponent implements OnInit{
   category: any;
   addAlbumForm: FormGroup ;
   errorMessage: string = ''; // Stores error messages
+  myToken: MyToken | null = null;
+  role: any;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private portfolioService: PortfolioService
+    private portfolioService: PortfolioService,
+    private authService: AuthService
   )
   {
     this.addAlbumForm = this.formBuilder.group({
@@ -30,6 +34,7 @@ export class PortfolioCategoryComponent implements OnInit{
   ngOnInit() {
     this.categoryId = this.route.snapshot.paramMap.get('id')!;
     this. getAlbumList();
+    this.role = this.authService.getRole();
   }
   
   getAlbumList() {

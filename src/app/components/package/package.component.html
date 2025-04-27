@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div class="row m-5"></div>
     <div class="row m-5 justify-content-center" id="package-h1"> Packages </div>
 
 
-    <div class="row m-5" > 
+    <div class="row m-5">
         <!--portfolio variable came from ts file, category is a variable to be iterate. of is a keyword-->
         @for(package of packages; track package.packageId){
         <div class="col-5" id="package-container">
@@ -19,17 +21,18 @@
             <br>
 
             @for(item of package.packageItems; track item.id){
-                <p> {{item.quantity}} + {{item.item.name}} <p>
-                }    
+            <p> {{item.quantity > 1 ? item.quantity : ""}} {{item.item.name + (item.quantity > 1 ? "s" : "")}}
+            <p>
+                }
 
-            <br>
+                <br>
             <h1> {{package.price}} </h1>
             <div class="row m-5"></div>
         </div>
         <div class="col-1"></div>
-    }
+        }
     </div>
-    
+
 
 
     <!--
@@ -83,7 +86,7 @@
 -->
 
 
-<!--
+    <!--
     <div class="row m-5">
         <div class="col-4"></div>
         <div class="col-8">
@@ -118,11 +121,13 @@
     <div class="row m-5">
         <div class="col-3"></div>
         <div class="col-6">
-           <a href="#" [routerLink]="['/add-package']"> <button class="btn" id="btn-add-package"> Add Package </button>  </a> 
+            <a href="#" [routerLink]="['/add-package']"> <button class="btn" id="btn-add-package"> Add Package </button>
+            </a>
         </div>
         <div class="col-3"></div>
     </div>
     <div class="row m-5"></div>
-    
+
 </body>
+
 </html>
