@@ -84,3 +84,17 @@ p
     }
 }
 
+@media (max-width: 990px) {
+    .row > div {
+        width: 100%; /* Make each container take full width */
+        flex: 0 0 100%; /* Force it to take the full row */
+        max-width: 100%; /* Ensure it spans the full width */
+    }
+
+    .row {
+        justify-content: center; /* Center align the images */
+        text-align: center;
+    }
+
+    
+}
