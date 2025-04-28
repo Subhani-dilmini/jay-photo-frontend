@@ -118,14 +118,16 @@
     </div> -->
 
 
-    <div class="row m-5">
-        <div class="col-3"></div>
-        <div class="col-6">
-            <a href="#" [routerLink]="['/add-package']"> <button class="btn" id="btn-add-package"> Add Package </button>
-            </a>
+    @if(role === 'admin'){
+        <div class="row m-5">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <a href="#" [routerLink]="['/add-package']"> <button class="btn" id="btn-add-package"> Add Package </button>
+                </a>
+            </div>
+            <div class="col-3"></div>
         </div>
-        <div class="col-3"></div>
-    </div>
+    }
     <div class="row m-5"></div>
 
 </body>

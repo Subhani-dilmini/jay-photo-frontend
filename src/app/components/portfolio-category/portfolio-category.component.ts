@@ -33,7 +33,7 @@ export class PortfolioCategoryComponent implements OnInit{
 
   ngOnInit() {
     this.categoryId = this.route.snapshot.paramMap.get('id')!;
-    this. getAlbumList();
+    this.getAlbumList();
     this.role = this.authService.getRole();
   }
   
@@ -57,7 +57,7 @@ export class PortfolioCategoryComponent implements OnInit{
       this.addAlbumForm.value, Number(this.categoryId)
     ).subscribe({
       next: (response: any) => {
-        console.log('User registered successfully');  
+        console.log('Album created successfully');  
         this.getAlbumList()
       },
       error: (err: any) => {
