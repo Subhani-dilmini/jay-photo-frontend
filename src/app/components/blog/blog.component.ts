@@ -22,7 +22,7 @@ export class BlogComponent implements OnInit{
 
   ngOnInit() {
     this.blogService.getBlogs().subscribe(data => {
-      this.blogs = data;
+      this.blog = data;
     })
     this.role = this.authService.getRole();
   }
