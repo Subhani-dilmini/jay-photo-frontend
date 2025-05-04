@@ -2,16 +2,40 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 
 <body>
-    <div class="row m-5"> </div>
-    <div class="row mt-5 justify-content-center" id="portfolio-album-head"> {{album.albumName }} </div>
+	<div class="row m-5"> </div>
+	<div class="row mt-5 justify-content-center" id="portfolio-album-head"> {{album.albumName }} </div>
 
-    <!--
+	<div class="row m-5">
+		@for(image of album.images; track image) {
+		<div class="col-5" id="vertical" style="position: relative;">
+			<img src="{{ image }}" alt="portfolio" class="img-fluid w-100 rounded" id="row-1-img-1" style="display: block;" />
+
+			@if(role === 'admin'){
+			<!-- Delete Icon (positioned inside image) -->
+			<i class="fas fa-trash-alt text-danger" title="Delete Photo" (click)="onDeleteImage(image)" style="
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    font-size: 1.5rem;
+                    background: rgba(255, 255, 255, 0.7);
+                    padding: 6px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                  ">
+			</i>
+			}
+		</div>
+
+		}
+	</div>
+
+	<!--
     <div class="row m-5 container-fluid" id="portfolio-category-big-small-row">
         <a href="#" [routerLink]="['portfolio-hiran&nathasha']">
             <div class="col-5" id="vertical">
@@ -33,7 +57,7 @@
     </div>-->
 
 
-    <!--
+	<!--
     <div class="row m-5 container-fluid" id="portfolio-category-small-big-row">
         <div class="col-6">
             <div class="row m-5"></div>
@@ -54,21 +78,21 @@
     </div>
     -->
 
-    @if(role === 'admin'){
-    <div class="row m-5">
-        <div class="col-2"></div>
-        <div class="col-8" id="add-album">
-            <div class="row m-3 justify-content-center"></div>
-            <label for="imageUpload" class="form-label" id="upload-img-heading">Upload Image</label>
-            <input class="form-control" type="file" id="imageUpload" accept="image/*">
-            <div class="row m-3"></div>
-            <button class="btn btn-primary container-fluid" id="add-album-btn" type="submit">Add photo </button>
-            <div class="row m-4"></div>
-        </div>
-        <div class="col-2"></div>
-        <div class="row m-3"></div>
-    </div>
-    }
+	@if(role === 'admin'){
+	<div class="row m-5">
+		<div class="col-2"></div>
+		<div class="col-8" id="add-album">
+			<div class="row m-3 justify-content-center"></div>
+			<label for="imageUpload" class="form-label" id="upload-img-heading">Upload Image</label>
+			<input class="form-control" type="file" id="imageUpload" accept="image/*" (change)="onFileSelected($event)">
+			<div class="row m-3"></div>
+			<button class="btn btn-primary container-fluid" id="add-album-btn" type="submit">Add photo </button>
+			<div class="row m-4"></div>
+		</div>
+		<div class="col-2"></div>
+		<div class="row m-3"></div>
+	</div>
+	}
 
 
 

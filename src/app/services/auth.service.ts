@@ -89,6 +89,11 @@ export class AuthService {
     return this.decodeToken().role;
   }
 
+  getCurrentUserId(): string | null {
+    if (this.decodeToken() == null) return null;
+    return this.decodeToken().id;
+  }
+
 
 
 

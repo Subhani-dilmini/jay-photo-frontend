@@ -3,6 +3,7 @@ import { FormBuilder,FormControl, FormGroup, ReactiveFormsModule,Validators } fr
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { PortfolioService } from '../../services/portfolio.service';
 import { AuthService, MyToken } from '../../services/auth.service';
+import { FileUploadService } from '../../services/file-upload.service';
 
 @Component({
   selector: 'app-portfolio-category',
@@ -22,7 +23,8 @@ export class PortfolioCategoryComponent implements OnInit{
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private portfolioService: PortfolioService,
-    private authService: AuthService
+    private authService: AuthService,
+    private uploadService: FileUploadService
   )
   {
     this.addAlbumForm = this.formBuilder.group({
@@ -40,8 +42,26 @@ export class PortfolioCategoryComponent implements OnInit{
   getAlbumList() {
     this.portfolioService.getAlbumsByCategoryId(parseInt(this.categoryId)).subscribe(data => {
       this.category = data;
+      this.category.albums.forEach((album: any) => {
+        this.getCategoryImage(album.albumName).then(data => album.albumImage = data);
+      })
+
     })
   }
+
+  async getCategoryImage(customName: string): Promise<any> {
+    return await this.uploadService.getFileUrlByFileName(customName, 'images/portfolio/category/' + this.categoryId);
+  }
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      this.uploadService.uploadOrReplaceFile('Hiran & Nathasha', file, 'images/portfolio/category/' + this.categoryId).then(url => {
+        console.log('File uploaded! URL:', url);
+      });
+    }
+  }
+  
 
   onSubmit() {
     /*if(!this.signUpForm.valid){
@@ -67,6 +87,18 @@ export class PortfolioCategoryComponent implements OnInit{
         
       }
     });
+  }
+
+  onUploadImage(albumId: string) {
+
+  }
+
+  onChangeImage(albumId: string) {
+
+  }
+
+  onDeleteAlbum(albumId: string) {
+
   }
 
 }

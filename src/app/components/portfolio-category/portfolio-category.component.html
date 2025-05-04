@@ -2,33 +2,43 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 
 <body>
-    <div class="row m-5"> </div>
-    <div class="row mt-5 justify-content-center" id="portfolio-category-head"> {{category.categoryName}} </div>
+	<div class="row m-5"> </div>
+	<div class="row mt-5 justify-content-center" id="portfolio-category-head"> {{category.categoryName}} </div>
 
-    <div class="row m-5"> 
-    @for(album of category.albums; track album.albumId) {
-        
-            <!--<a href="#" [routerLink]="['portfolio-hiran&nathasha']">-->
-                <div class="col-5" id="vertical">
-                    <!--<div class="row m-3"></div>-->
-                    <a href="#" [routerLink]="['/portfolio-album', album.albumId]"> 
-                        <img src="/wedding-cat-1.jpg" alt="portfolio" class="img-fluid" id="row-1-img-1"> 
-                    </a>
-                    <div class="row m-1"></div>
-                    <h1> {{album.albumName}} </h1>
-                    <div class="row m-5"></div>
-                </div>
-                <div class="col-1"></div>
-    }
-    </div>
-            <!--</a> -->       
-            <!-- <div class="col-1"></div>
+	<div class="row m-5">
+		@for(album of category.albums; track album.albumId) {
+
+		<!--<a href="#" [routerLink]="['portfolio-hiran&nathasha']">-->
+		<div class="col-5" id="vertical">
+			<!--<div class="row m-3"></div>-->
+			<a href="#" [routerLink]="['/portfolio-album', album.albumId]">
+				<img src="{{ album.albumImage ? album.albumImage : '/default-placeholder.png'}}" alt="portfolio"
+					class="img-fluid" id="row-1-img-1">
+			</a>
+			<div class="row m-1"></div>
+			<h1 class="d-flex align-items-center justify-content-between">
+				{{ album.albumName }}
+				@if(role === 'admin'){
+				<span>
+					<i class="fas fa-edit text-primary mx-2" style="cursor: pointer;" (click)="onChangeImage(album.albumId)"></i>
+					<i class="fas fa-trash-alt text-danger" style="cursor: pointer;" (click)="onDeleteAlbum(album.albumId)"></i>
+				</span>
+				}
+			</h1>
+
+			<div class="row m-5"></div>
+		</div>
+		<div class="col-1"></div>
+		}
+	</div>
+	<!--</a> -->
+	<!-- <div class="col-1"></div>
             <div class="col-6" id="horizontal">
                 <div class="row m-3"></div>
                 <div class="row mt-5">
@@ -39,11 +49,11 @@
                 <p class="text-center" id="album-name"> shihan & dehini </p>
             </div> -->
 
-        
-    
 
 
-    <!--
+
+
+	<!--
     <div class="row m-5 container-fluid" id="portfolio-category-small-big-row">
         <div class="col-6">
             <div class="row m-5"></div>
@@ -64,7 +74,7 @@
     </div>
     -->
 
-    <!-- <div class="row m-5" >
+	<!-- <div class="row m-5" >
         <div class="col-2"></div>
         <div class="col-8" id="add-album">
             <div class="row m-3 justify-content-center"></div>
@@ -81,27 +91,29 @@
     </div> -->
 
 
-    @if(role ===  'admin'){
-        <div class="row m-5">
-            <form [formGroup]="addAlbumForm">
-            <div class="col-2"></div>
-            <div class="col-8" id="add-album">
-                <div class="row m-3 justify-content-center"></div>
-                <label for="albumTitle" class="form-label" id="blog-title-heading" > Album Name : </label>
-                <input class="form-control" type="text" id="blogTitle" formControlName="albumName">
-                <label for="album-update-date" class="form-label" id="blog-update-date-heading"> Published Date : </label>
-                <input class="form-control" type="date" id="blog-update-date" formControlName="publishedDate">
-                <label for="imageUpload" class="form-label" id="upload-img-heading">Upload Key Image</label>
-                <input class="form-control" type="file" id="imageUpload" accept="image/*">
-                <div class="row m-3"></div>
-                <button class="btn btn-primary container-fluid" id="add-album-btn" type="button" (click)="onSubmit()">Add Album</button>
-                <div class="row m-4"></div>
-            </div>
-            </form>
-            <div class="col-2"></div>
-            <div class="row m-3"></div>
-        </div>
-    }
+	@if(role === 'admin'){
+	<div class="row m-5">
+		<form [formGroup]="addAlbumForm">
+			<div class="col-2"></div>
+			<div class="col-8" id="add-album">
+				<div class="row m-3 justify-content-center"></div>
+				<label for="albumTitle" class="form-label" id="blog-title-heading"> Album Name : </label>
+				<input class="form-control" type="text" id="blogTitle" formControlName="albumName">
+				<label for="album-update-date" class="form-label" id="blog-update-date-heading"> Published Date :
+				</label>
+				<input class="form-control" type="date" id="blog-update-date" formControlName="publishedDate">
+				<label for="imageUpload" class="form-label" id="upload-img-heading">Upload Key Image</label>
+				<input class="form-control" type="file" id="imageUpload" accept="image/*" (change)="onFileSelected($event)">
+				<div class="row m-3"></div>
+				<button class="btn btn-primary container-fluid" id="add-album-btn" type="button" (click)="onSubmit()">Add
+					Album</button>
+				<div class="row m-4"></div>
+			</div>
+		</form>
+		<div class="col-2"></div>
+		<div class="row m-3"></div>
+	</div>
+	}
 
 
 
