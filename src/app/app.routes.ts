@@ -90,7 +90,11 @@ export const routes: Routes = [
     component: BlogPostComponent
   },
   {
-    path: 'client-account',
+    path: 'client-account/:id',
+    component: ClientAccountComponent
+  },
+  {
+    path: 'my-account',
     component: ClientAccountComponent
   },
   {

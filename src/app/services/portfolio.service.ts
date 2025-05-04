@@ -33,7 +33,7 @@ export class PortfolioService {
   addAlbum(album: any, categoryId: number): Observable<any> {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post(this.baseUrl + 'categories/'+ categoryId + '/albums' , album , {headers});
+    return this.http.post(this.baseUrl + 'categories/'+ categoryId + '/albums' , album , {headers , responseType: 'text' as 'json' });
   }
    
 }

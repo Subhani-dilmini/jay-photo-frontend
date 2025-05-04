@@ -16,7 +16,7 @@
             <!--in here we try to link wedding portfolio page for that-->
 
             <a href="#" [routerLink]="['/portfolio-category', category.id]"> 
-                <img src="/wedding-portfolio.jpeg" alt="wedding" class="img-fluid" id="wedding-img"> 
+                <img src="{{ category.categoryImage ? category.categoryImage : '/default-placeholder.png'}}" id="categoryImage" alt="wedding" class="img-fluid" id="wedding-img"> 
             </a>
             <div class="row m-1"></div>
             <h1> {{category.categoryName}} </h1>
