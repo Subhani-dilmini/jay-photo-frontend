@@ -86,7 +86,7 @@ export const routes: Routes = [
     component: BlogComponent
   },
   {
-    path: 'blog-post-1',
+    path: 'blog-post/:id',
     component: BlogPostComponent
   },
   {
@@ -111,6 +111,10 @@ export const routes: Routes = [
   },
   {
     path: 'add-blog',
+    component: AddBlogComponent
+  },
+  {
+    path: 'edit-blog',
     component: AddBlogComponent
   },
   {

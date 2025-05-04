@@ -17,4 +17,10 @@ export class BlogService {
     headers.append('Content-Type', 'application/json');
     return this.http.get(this.baseUrl + 'blogs', {headers});
   }
+
+  getBlog(id: number): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.baseUrl + 'blogs'+ id, {headers});
+  }
 }

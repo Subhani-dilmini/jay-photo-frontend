@@ -32,7 +32,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     /* Adds some padding to the sides */
-    background-color: aquamarine;
+    background: linear-gradient(to right, #77116bb9, #051d95bf);
 }
 #package-h1
 {
@@ -110,4 +110,18 @@ p
     }
 
     
+
+}
+
+@media (max-width: 990px) {
+    .row > div {
+        width: 100%; /* Make each image container take full width */
+        flex: 0 0 100%; /* Force it to take the full row */
+        max-width: 100%; /* Ensure it spans the full width */
+    }
+
+    .row {
+        justify-content: center; /* Center align the images */
+        text-align: center;
+    }
 }

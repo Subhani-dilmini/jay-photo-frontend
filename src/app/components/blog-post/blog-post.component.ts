@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterModule, ActivatedRoute } from '@angular/router';
+import { BlogService } from '../../services/blog.service';
 
 @Component({
   selector: 'app-blog-post',
@@ -7,6 +8,18 @@ import { RouterModule } from '@angular/router';
   templateUrl: './blog-post.component.html',
   styleUrl: './blog-post.component.scss'
 })
-export class BlogPostComponent {
+export class BlogPostComponent implements OnInit{
+  blogId : string = '';
+  blog: any;
 
+constructor(
+  private blogService: BlogService,
+  private route: ActivatedRoute,) { }
+
+  ngOnInit() {
+    this.blogId = this.route.snapshot.paramMap.get('id')!;
+    this.blogService.getBlog(parseInt(this.blogId)).subscribe(data => {
+      this.blog = data;
+    })
+  }
 }

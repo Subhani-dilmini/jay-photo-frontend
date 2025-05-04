@@ -1,41 +1,81 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { FormBuilder,FormControl, FormGroup, ReactiveFormsModule, FormArray, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { PackageService } from '../../services/package.service';
 
 @Component({
   selector: 'app-add-package',
-  imports: [RouterModule],
+  standalone: true,
+  imports: [
+    FormsModule, 
+    RouterModule, 
+    CommonModule, 
+    ReactiveFormsModule
+  ],
   templateUrl: './add-package.component.html',
   styleUrl: './add-package.component.scss'
 })
+
 export class AddPackageComponent {
+ addPackageForm: FormGroup ;
+ PackageTitle: string = '';
+ Price: string = '';
+ availableItems: any[] = [];
 
-  addItemField(): void {
-    const container = document.getElementById("items-container") as HTMLElement;
-    
-    // Create a div wrapper for new item
-    const itemDiv = document.createElement("div");
-    itemDiv.classList.add("d-flex", "mb-2", "align-items-center");
+ constructor(
+  private packageService: PackageService,
+  private formBuilder: FormBuilder,
+  private router: RouterModule
+  ) {
+    this.addPackageForm = this.formBuilder.group({
+      PackageTitle: new FormControl('', Validators.required),
+      Price: new FormControl('', Validators.required),
+      items: this.formBuilder.array([this.createItem()])
+    });
+  }
+ 
+ // List of items with quantity
+ itemList: { name: string, quantity: number }[] = [{ name: '', quantity: 1 }];
 
-    // Create input field
-    const input = document.createElement("input");
-    input.type = "text";
-    input.classList.add("form-control", "me-2");
-    input.placeholder = "Enter item";
+ ngOnInit() {
+  this.packageService.getAvailableItems().subscribe(data => {
+    this.availableItems = data;
+  })
+}
 
-    // Create "+" button
-    const addButton = document.createElement("button");
-    addButton.innerHTML = "+";
-    addButton.classList.add("btn", "btn-success", "btn-sm");
-    
-    // Explicitly define the event handler
-    addButton.addEventListener("click", this.addItemField);
+// Create a single item group
+createItem(): FormGroup {
+  return this.formBuilder.group({
+    name: ['', Validators.required],
+    quantity: [1, [Validators.required, Validators.min(1)]]
+  });
+}
 
-    // Append elements to div
-    itemDiv.appendChild(input);
-    itemDiv.appendChild(addButton);
+  // Access items as FormArray
+  get items(): FormArray {
+    return this.addPackageForm.get('items') as FormArray;
+  }
 
-    // Append div to container
-    container.appendChild(itemDiv);
+getAvailableItems(){
+
+}
+
+ // Add new item to items array
+ addItem(): void {
+  this.items.push(this.createItem());
+}
+
+ // Optional: onSubmit method
+ onSubmit(): void {
+  if (this.addPackageForm.valid) {
+    console.log('Form data:', this.addPackageForm.value);
+  } else {
+    console.log('Form is invalid');
+  }
 }
 
 }
+
+

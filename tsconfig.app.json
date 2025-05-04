@@ -8,7 +8,7 @@
       "node"
     ]
   },
-  "files": [
+    "files": [
     "src/main.ts",
     "src/main.server.ts",
     "src/server.ts"

@@ -11,13 +11,13 @@ import { CommonModule, NgFor } from '@angular/common';
 })
 export class BlogComponent implements OnInit{
   //global variable to store the blog data to be displayed in the template(html)
-  blog: any[] = [];
+  blogs: any[] = [];
 
   constructor(private blogService: BlogService) { }
 
   ngOnInit() {
     this.blogService.getBlogs().subscribe(data => {
-      this.blog = data;
+      this.blogs = data;
     })
   }
 
