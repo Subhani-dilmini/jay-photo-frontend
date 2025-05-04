@@ -17,7 +17,7 @@
         <div class="col-10">
             <div class="row m-3 justify-content-center" id="personal-info">
                 <div class="row mt-5 justify-content-center">
-                    <img src="/profile-pic.jpg" alt="Image" width="30px" height="20px" class="img-fluid rounded-circle" id="client-img"> 
+                    <img src="{{ imageUrl ? imageUrl : '/user-default.png' }}" alt="Image" width="30px" height="20px" class="img-fluid rounded-circle" id="client-img"> 
                 </div>
                 <div class="row mt-2 justify-content-center text-center" >
                     <h1 id="name"> {{ userDetails.firstName + " " + userDetails.lastName }} </h1>

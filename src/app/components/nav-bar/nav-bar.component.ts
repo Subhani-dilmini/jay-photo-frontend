@@ -12,6 +12,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class NavBarComponent implements OnInit {
 
+  role: any;
   isLogged = false;
   constructor(private authService: AuthService) { }
 
@@ -20,6 +21,7 @@ export class NavBarComponent implements OnInit {
     this.authService.isLogged.subscribe((logged: boolean) => {
       this.isLogged = logged;
     });
+    this.role = this.authService.getRole();
   }
 
   logOut() { 

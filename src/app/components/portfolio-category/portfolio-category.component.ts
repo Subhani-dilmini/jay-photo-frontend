@@ -18,6 +18,7 @@ export class PortfolioCategoryComponent implements OnInit{
   errorMessage: string = ''; // Stores error messages
   myToken: MyToken | null = null;
   role: any;
+  file: File | null = null;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -54,12 +55,7 @@ export class PortfolioCategoryComponent implements OnInit{
   }
 
   onFileSelected(event: any) {
-    const file: File = event.target.files[0];
-    if (file) {
-      this.uploadService.uploadOrReplaceFile('Hiran & Nathasha', file, 'images/portfolio/category/' + this.categoryId).then(url => {
-        console.log('File uploaded! URL:', url);
-      });
-    }
+    this.file = event.target.files[0];
   }
   
 
@@ -77,8 +73,15 @@ export class PortfolioCategoryComponent implements OnInit{
       this.addAlbumForm.value, Number(this.categoryId)
     ).subscribe({
       next: (response: any) => {
-        console.log('Album created successfully');  
-        this.getAlbumList()
+        console.log('Album created successfully');
+        if (this.file) {
+          this.uploadService.uploadOrReplaceFile(this.addAlbumForm.get('albumName')?.value, this.file, 'images/portfolio/category/' + this.categoryId).then(url => {
+            this.getAlbumList();
+            console.log('File uploaded! URL:', url);
+          });
+        }else {
+          this.getAlbumList();
+        }
       },
       error: (err: any) => {
         console.log('Error album creation', err);

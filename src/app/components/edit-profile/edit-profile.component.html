@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div class="row m-5"> </div>
     <div class="row mt-5 justify-content-center" id="edit-blog-head"> EDIT PROFILE </div>
 
-    <div class="row m-5" >
-        <div class="col-2"></div>
-        <div class="col-8" id="edit-blog">
-            <div class="row m-3 justify-content-center"></div>
-            <label for="blogTitle" class="form-label" id="blog-title-heading"> Email : </label>
-            <input class="form-control" type="email" id="blogTitle" >
-            <label for="blog-content" class="form-label" id="blog-content-heading"> Phone number : </label>
-            <input class="form-control" type="number" id="blogTitle" >
-            <label for="blog-content" class="form-label" id="blog-content-heading"> Address : </label>
-            <textarea class="form-control" id="blog-content" rows="2"> </textarea>
-            <label for="imageUpload" class="form-label" id="upload-img-heading">Upload Image :</label>
-            <input class="form-control" type="file" id="imageUpload" accept="image/*">
+    <form [formGroup]="editProfileForm">
+        <div class="row m-5">
+            <div class="col-2"></div>
+            <div class="col-8" id="edit-blog">
+                <div class="row m-3 justify-content-center"></div>
+                <label for="blogTitle" class="form-label" id="blog-title-heading"> Email : </label>
+                <input class="form-control" type="email" id="blogTitle" formControlName="email">
+                <label for="blog-content" class="form-label" id="blog-content-heading"> Phone number : </label>
+                <input class="form-control" type="number" id="blogTitle" formControlName="phoneNumber">
+                <label for="blog-content" class="form-label" id="blog-content-heading"> Address : </label>
+                <textarea class="form-control" id="blog-content" rows="2" formControlName="address"> </textarea>
+                <label for="imageUpload" class="form-label" id="upload-img-heading">Upload Image :</label>
+                <input class="form-control" type="file" id="imageUpload" accept="image/*"  (change)="onFileSelected($event)">
+                <div class="row m-3"></div>
+                <a href="#" class="nav-link text-white" [routerLink]="['/client-account']"> <button
+                        class="btn btn-primary container-fluid" id="add-album-btn" type="submit"> Update </button> </a>
+                <div class="row m-4"></div>
+            </div>
+            <div class="col-2"></div>
             <div class="row m-3"></div>
-            <a href="#" class="nav-link text-white" [routerLink]="['/client-account']" > <button class="btn btn-primary container-fluid" id="add-album-btn" type="submit" > Update </button> </a>
-            <div class="row m-4"></div>
         </div>
-        <div class="col-2"></div>
-        <div class="row m-3"></div>
-    </div>
+    </form>
 </body>
+
 </html>

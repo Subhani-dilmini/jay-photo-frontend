@@ -15,10 +15,10 @@
     <div class="row m-5">
         <!--portfolio variable came from ts file, category is a variable to be iterate. of is a keyword-->
         @for(package of packages; track package.packageId){
-        <div class="col-5" id="package-container">          
+        <div class="col-5" id="package-container">
 
             <h1> {{package.name}} </h1>
-           
+
 
             @for(item of package.packageItems; track item.id){
             <p> {{item.quantity > 1 ? item.quantity : ""}} {{item.item.name + (item.quantity > 1 ? "s" : "")}}
@@ -27,7 +27,10 @@
 
                 <br>
             <h1> {{package.price}} </h1>
-            <a href="#"  [routerLink]="['/blog']" > <button class="btn btn-primary container-fluid" id="add-album-btn" type="update">Update Package</button> </a>
+            @if(role === 'admin'){
+            <a href="#" [routerLink]="['/blog']"> <button class="btn btn-primary container-fluid" id="add-album-btn"
+                    type="update">Update Package</button> </a>
+            }
             <div class="row m-5"></div>
         </div>
         <div class="col-1"></div>
@@ -120,14 +123,14 @@
 
 
     @if(role === 'admin'){
-        <div class="row m-5">
-            <div class="col-3"></div>
-            <div class="col-6">
-                <a href="#" [routerLink]="['/add-package']"> <button class="btn" id="btn-add-package"> Add Package </button>
-                </a>
-            </div>
-            <div class="col-3"></div>
+    <div class="row m-5">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <a href="#" [routerLink]="['/add-package']"> <button class="btn" id="btn-add-package"> Add Package </button>
+            </a>
         </div>
+        <div class="col-3"></div>
+    </div>
     }
     <div class="row m-5"></div>
 

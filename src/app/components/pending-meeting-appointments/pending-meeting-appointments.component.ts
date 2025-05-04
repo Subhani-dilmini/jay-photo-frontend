@@ -39,4 +39,15 @@ export class PendingMeetingAppointmentsComponent implements OnInit{
     });
   }
 
+  rejectMeeting(meetingId: number) {
+    this.meetingService.changeMeetingStatus(meetingId, 'CANCELED').subscribe({
+      next: data => {
+        this.getPendingMeetings();
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
+  }
+
 }
