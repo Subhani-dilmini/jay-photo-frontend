@@ -81,6 +81,29 @@ h1 {
     text-align: center;
 }
 
+#add-cayegory 
+{
+    background: linear-gradient(to right, #77116bb9, #051d95bf);
+    padding-right: 2%;
+    padding-left: 2%;
+    border-radius: 10px;
+}
+
+#category-title-heading, #upload-img-heading
+    {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: rgba(3, 10, 56, 0.848);
+    }
+    
+#categoryTitle
+    {
+        background-color: rgba(146, 231, 239, 0.792);
+        border: rgb(5, 5, 86);
+        font-size: 1.2em;
+
+    }
+
 @media (max-width: 990px) {
     .row > div {
         width: 100%; /* Make each image container take full width */

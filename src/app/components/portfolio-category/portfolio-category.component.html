@@ -97,11 +97,10 @@
 			<div class="col-2"></div>
 			<div class="col-8" id="add-album">
 				<div class="row m-3 justify-content-center"></div>
-				<label for="albumTitle" class="form-label" id="blog-title-heading"> Album Name : </label>
-				<input class="form-control" type="text" id="blogTitle" formControlName="albumName">
-				<label for="album-update-date" class="form-label" id="blog-update-date-heading"> Published Date :
-				</label>
-				<input class="form-control" type="date" id="blog-update-date" formControlName="publishedDate">
+				<label for="albumTitle" class="form-label" id="album-title-heading"> Album Name : </label>
+				<input class="form-control" type="text" id="albumTitle" formControlName="albumName">
+				<label for="album-update-date" class="form-label" id="album-update-date-heading"> Published Date : </label>
+				<input class="form-control" type="date" id="album-update-date" formControlName="publishedDate">
 				<label for="imageUpload" class="form-label" id="upload-img-heading">Upload Key Image</label>
 				<input class="form-control" type="file" id="imageUpload" accept="image/*" (change)="onFileSelected($event)">
 				<div class="row m-3"></div>

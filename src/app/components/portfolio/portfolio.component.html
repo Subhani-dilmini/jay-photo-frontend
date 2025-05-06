@@ -27,6 +27,28 @@
     </div>
 
 
+    @if(role === 'admin'){
+        <div class="row m-5">
+            <form [formGroup]="addCategoryForm">
+                <div class="col-2"></div>
+                <div class="col-8" id="add-cayegory">
+                    <div class="row m-3 justify-content-center"></div>
+                    <label for="categoryTitle" class="form-label" id="category-title-heading"> Category Name : </label>
+                    <input class="form-control" type="text" id="categoryTitle" formControlName="categoryName">
+
+                    <label for="imageUpload" class="form-label" id="upload-img-heading">Upload Key Image</label>
+                    <input class="form-control" type="file" id="imageUpload" accept="image/*" (change)="onFileSelected($event)">
+                    <div class="row m-3"></div>
+                    <button class="btn btn-primary container-fluid" id="add-album-btn" type="button" (click)="onSubmit()">Add
+                        Album</button>
+                    <div class="row m-4"></div>
+                </div>
+            </form>
+            <div class="col-2"></div>
+            <div class="row m-3"></div>
+        </div>
+        }
+
     
     <div class="row m-3"></div>
     

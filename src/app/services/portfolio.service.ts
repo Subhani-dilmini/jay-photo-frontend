@@ -35,5 +35,11 @@ export class PortfolioService {
     headers.append('Content-Type', 'application/json');
     return this.http.post(this.baseUrl + 'categories/'+ categoryId + '/albums' , album , {headers , responseType: 'text' as 'json' });
   }
+
+  addCategory(category: any): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.baseUrl + 'categories' , category , {headers , responseType: 'text' as 'json' });
+  }
    
 }
