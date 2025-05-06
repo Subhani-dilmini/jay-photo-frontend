@@ -16,7 +16,8 @@ export class PackageComponent implements OnInit{
   packages: any[] = [];
   role: any;
 
-  constructor(private packageService: PackageService,
+  constructor(
+    private packageService: PackageService,
     private authService: AuthService
   ) { }
 

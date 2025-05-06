@@ -27,6 +27,7 @@ import { ConfirmedMeetingAppointmentsComponent } from './components/confirmed-me
 import { PendingSessionAppointmentsComponent } from './components/pending-session-appointments/pending-session-appointments.component';
 import { ConfirmedSessionAppointmentsComponent } from './components/confirmed-session-appointments/confirmed-session-appointments.component';
 import { AddPackageComponent } from './components/add-package/add-package.component';
+import { AddItemsComponent } from './components/add-items/add-items.component';
 
 export const routes: Routes = [
   {
@@ -68,6 +69,10 @@ export const routes: Routes = [
   {
     path: 'packages',
     component: PackageComponent
+  },
+  {
+    path: 'package-items',
+    component: AddItemsComponent
   },
   {
     path: 'portfolio',

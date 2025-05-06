@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FormBuilder,FormControl, FormGroup, ReactiveFormsModule, FormArray, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -23,11 +23,12 @@ export class AddPackageComponent {
  PackageTitle: string = '';
  Price: string = '';
  availableItems: any[] = [];
+ errorMessage: string = ''; // Stores error messages
 
  constructor(
   private packageService: PackageService,
   private formBuilder: FormBuilder,
-  private router: RouterModule
+  private router: Router
   ) {
     this.addPackageForm = this.formBuilder.group({
       PackageTitle: new FormControl('', Validators.required),
@@ -67,13 +68,26 @@ getAvailableItems(){
   this.items.push(this.createItem());
 }
 
- // Optional: onSubmit method
- onSubmit(): void {
-  if (this.addPackageForm.valid) {
-    console.log('Form data:', this.addPackageForm.value);
-  } else {
-    console.log('Form is invalid');
-  }
+onSubmit() {
+    if(!this.addPackageForm.valid ){
+      return;
+    }
+
+  this.packageService.addPackage(
+    this.addPackageForm.value
+  ).subscribe({
+    next: (response: any) => {
+      console.log('Package created successfully');
+      this.router.navigate(['/packages']);
+      
+    },
+    error: (err: any) => {
+      console.log('Error Package creation', err);
+
+      this.errorMessage = 'Package creation failed. Try again.';
+      
+    }
+  });
 }
 
 }

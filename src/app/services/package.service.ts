@@ -10,7 +10,9 @@ export class PackageService {
 
   baseUrl = 'http://localhost:8080/api/packages';   
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(
+    private http: HttpClient, 
+    private router: Router) { }
 
   getPackages(): Observable<any> {
     let headers = new HttpHeaders();
@@ -22,6 +24,18 @@ export class PackageService {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.http.get(this.baseUrl + '/availableItems', {headers});
+  }
+
+  addPackage(data: any): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.baseUrl, data, {headers});
+  }
+
+  addPackageItems(data: any): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.baseUrl, data, {headers});
   }
 }
 

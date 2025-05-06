@@ -1,6 +1,8 @@
 body {
     /*to set background image to the landing page*/
-    background-image: url("/package-background (2).jpg");
+   /* background-image: url("/package-background (2).jpg"); public/package-background-2.jpg*/
+
+    background-image: url("/package-background-2.jpg");
 
     background-size: cover;
     /* ensures the image covers the entire background */
@@ -17,6 +19,7 @@ body {
     background-attachment: fixed;
     /* Removes default margin */
     /* overflow: hidden; Prevents scrolling if the image overflows */
+    
 
 
 }
@@ -32,16 +35,24 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     /* Adds some padding to the sides */
-    background: linear-gradient(to right, #77116bb9, #051d95bf);
+    background: linear-gradient(to right, #112777d1, #057f95da);
+    border-radius: 15px;
 }
 #package-h1
 {
-    font-size: 7em;
-    color: rgb(230, 71, 97);
+    font-size: 6em;
+    color: #b7f6d8;
     text-align: center !important;
     font-weight: bold;
 }
 
+#packageName
+{
+    font-size: 3em;
+    color: rgb(0, 0, 0);
+    text-align: left !important;
+    font-weight: bold;
+}
 img
 {
     width: 920px;
@@ -49,23 +60,46 @@ img
     border-radius: 10px;
 }
 
-p
+#packageItem
 {
-    font-size: 2em;
+    font-size: 1.8em;
     color: white;
     text-align: center;
-    font-weight: bold;
-    background-color: rgb(171, 69, 88);
+    font-weight:normal;
     border-radius: 3px;
+    text-align: left !important;
 }
 
-#btn-add-package
+#packagePrice
+{
+    font-size: 2.5em;
+    color: rgb(0, 0, 0);
+    font-weight:normal;
+    text-align: left !important;
+    font-weight: bold;
+
+}
+#btn-update-package
 {
     color: rgb(0, 0, 0);
     font-weight: bolder;
     font-size: 1.5em;
     font-family:cursive;
-    background-color: rgb(0, 147, 10);
+    background-color:#27a168		;
+    border: none;
+    border-radius: 5px;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50% !important;
+}
+
+#btn-add-package, #btn-add-items
+{
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: 1.5em;
+    font-family:cursive;
+    background-color: rgb(44, 194, 54);
     border-radius: 5px;
     margin-left: 25%;
     margin-right: 25%;
