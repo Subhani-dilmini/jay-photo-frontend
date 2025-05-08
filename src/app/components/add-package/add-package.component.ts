@@ -31,14 +31,14 @@ export class AddPackageComponent {
   private router: Router
   ) {
     this.addPackageForm = this.formBuilder.group({
-      PackageTitle: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required),
       Price: new FormControl('', Validators.required),
       items: this.formBuilder.array([this.createItem()])
     });
   }
  
  // List of items with quantity
- itemList: { name: string, quantity: number }[] = [{ name: '', quantity: 1 }];
+ itemList: { itemName: string, quantity: number }[] = [{ itemName: '', quantity: 1 }];
 
  ngOnInit() {
   this.packageService.getAvailableItems().subscribe(data => {
@@ -49,7 +49,7 @@ export class AddPackageComponent {
 // Create a single item group
 createItem(): FormGroup {
   return this.formBuilder.group({
-    name: ['', Validators.required],
+    itemName: ['', Validators.required],
     quantity: [1, [Validators.required, Validators.min(1)]]
   });
 }

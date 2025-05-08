@@ -18,8 +18,8 @@
       <form [formGroup]="addPackageForm">
         <div class="row m-3 justify-content-center"></div>
 
-        <label for="blogTitle" class="form-label" id="package-title-heading"> Title : </label>
-        <input class="form-control" type="text" id="packageTitle" formControlName="PackageTitle">
+        <label for="blogTitle" class="form-label" id="package-title-heading"> Package Name : </label>
+        <input class="form-control" type="text" id="packageTitle" formControlName="name">
 
         <label for="imageUpload" class="form-label" id="package-price-heading">price :</label>
         <input class="form-control" type="text" id="packagePrice" formControlName="Price">
@@ -31,10 +31,9 @@
             
             <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i" class="row m-2">
               <div class="col-6">
-                <select class="form-control" id="availableItemInput " formControlName="name">
-                  <option value="" disabled selected>Select an item</option>
-                  <option *ngFor="let availableItem of availableItems" [value]="availableItem"> {{ availableItem }}
-                  </option>
+                <select class="form-control" id="availableItemInput " formControlName="itemName">
+                  <option value="" disabled selected> Select an item </option>
+                  <option *ngFor="let availableItem of availableItems" [ngValue]="availableItem"> {{ availableItem.name }} </option>
                 </select>
               </div>
 
@@ -76,6 +75,8 @@
       </form>
     </div>
     </div>
+    <div class="row m-5"></div>
+    <div class="row m-5"></div>
 </body>
 
 </html>

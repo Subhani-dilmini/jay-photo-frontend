@@ -35,7 +35,7 @@ export class PackageService {
   addPackageItems(data: any): Observable<any> {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post(this.baseUrl, data, {headers});
+    return this.http.post(this.baseUrl + '/items', data, {headers});
   }
 }
 

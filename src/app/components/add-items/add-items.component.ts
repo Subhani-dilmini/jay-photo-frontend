@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { FormBuilder,FormControl, FormGroup, ReactiveFormsModule, FormArray, Validators } from '@angular/forms';
+import { FormBuilder,FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PackageService } from '../../services/package.service';
 
@@ -26,8 +26,8 @@ export class AddItemsComponent {
     private router: Router
     ) {
       this.addPackageItemForm = this.formBuilder.group({
-        PackageItemName: new FormControl('', Validators.required),
-        Price: new FormControl('', Validators.required)
+        name: new FormControl('', Validators.required),
+        price: new FormControl('', Validators.required)
       });
     }
 
@@ -36,15 +36,19 @@ export class AddItemsComponent {
     }
 
     onSubmit() {
+      console.log(this.addPackageItemForm.value);
       if(!this.addPackageItemForm.valid ){
         return;
       }
+
+
   
-    this.packageService.addPackage(
+    this.packageService.addPackageItems(
       this.addPackageItemForm.value
     ).subscribe({
       next: (response: any) => {
         console.log('Package item created successfully');
+        alert('Package item created successfully');
         this.router.navigate(['/packages']);
         
       },
