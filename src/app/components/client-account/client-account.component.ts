@@ -15,6 +15,7 @@ export class ClientAccountComponent implements OnInit {
   userId: any;
   userDetails: any;
   imageUrl: any;
+  isMyProfile: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -24,6 +25,7 @@ export class ClientAccountComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.isMyProfile = this.route.snapshot.routeConfig?.path?.includes('my-account')!;
     this.userId = this.route.snapshot.paramMap.get('id') || this.authService.getCurrentUserId();
     this.role = this.authService.getRole();
     this.getUserDetails();

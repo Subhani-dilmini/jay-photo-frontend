@@ -69,6 +69,7 @@ getAvailableItems(){
 }
 
 onSubmit() {
+  console.log(this.addPackageForm.value);
     if(!this.addPackageForm.valid ){
       return;
     }

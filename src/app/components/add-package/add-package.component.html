@@ -61,8 +61,8 @@
 
             </div> 
               <div class="row m-3"></div>
-              <a href="#" [routerLink]="['/packages']"> <button class="btn btn-primary container-fluid"
-                  id="add-package-btn" type="submit"> Add Package </button> </a>
+              <button class="btn btn-primary container-fluid"
+                  id="add-package-btn" type="submit" (click)="onSubmit()"> Add Package </button> 
               <div class="row m-4"></div>
             </div>
             <div class="col-2"></div>
