@@ -22,16 +22,16 @@
         <input class="form-control" type="text" id="packageTitle" formControlName="name">
 
         <label for="imageUpload" class="form-label" id="package-price-heading">price :</label>
-        <input class="form-control" type="text" id="packagePrice" formControlName="Price">
+        <input class="form-control" type="text" id="packagePrice" formControlName="price">
 
         <label for="items" id="item-heading">Package Items:</label>
 
-        <div formArrayName="items">
+        <div formArrayName="packageItems">
           <div id="items-container">
             
             <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i" class="row m-2">
               <div class="col-6">
-                <select class="form-control" id="availableItemInput " formControlName="itemName">
+                <select class="form-control" id="availableItemInput " formControlName="item">
                   <option value="" disabled selected> Select an item </option>
                   <option *ngFor="let availableItem of availableItems" [ngValue]="availableItem"> {{ availableItem.name }} </option>
                 </select>

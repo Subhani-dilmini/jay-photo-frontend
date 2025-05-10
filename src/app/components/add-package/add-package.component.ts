@@ -32,13 +32,13 @@ export class AddPackageComponent {
   ) {
     this.addPackageForm = this.formBuilder.group({
       name: new FormControl('', Validators.required),
-      Price: new FormControl('', Validators.required),
-      items: this.formBuilder.array([this.createItem()])
+      price: new FormControl('', Validators.required),
+      packageItems: this.formBuilder.array([this.createItem()])
     });
   }
  
  // List of items with quantity
- itemList: { itemName: string, quantity: number }[] = [{ itemName: '', quantity: 1 }];
+ itemList: { item: string, quantity: number }[] = [{ item: '', quantity: 1 }];
 
  ngOnInit() {
   this.packageService.getAvailableItems().subscribe(data => {
@@ -49,14 +49,14 @@ export class AddPackageComponent {
 // Create a single item group
 createItem(): FormGroup {
   return this.formBuilder.group({
-    itemName: ['', Validators.required],
+    item: ['', Validators.required],
     quantity: [1, [Validators.required, Validators.min(1)]]
   });
 }
 
   // Access items as FormArray
   get items(): FormArray {
-    return this.addPackageForm.get('items') as FormArray;
+    return this.addPackageForm.get('packageItems') as FormArray;
   }
 
 getAvailableItems(){

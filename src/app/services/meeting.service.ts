@@ -17,10 +17,22 @@ export class MeetingService {
     return this.http.get(this.baseUrl + '/count/pending', {headers});
   }
 
+  getPendingMeetingCountByUser(id: number): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.baseUrl + '/getCountByUser/' + id, {headers});
+  }
+
   getPendingMeetings(): Observable<any> {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.http.get(this.baseUrl + '/pending', {headers});
+  }
+
+  getPendingMeetingsByUser(id: number): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.baseUrl + '/getByUser/' + id, {headers});
   }
 
   getConfirmedMeetingCount(): Observable<any> {
@@ -40,6 +52,12 @@ export class MeetingService {
     let params = new HttpParams().set('status', status);
     headers.append('Content-Type', 'application/json');
     return this.http.put(this.baseUrl + '/' + id + '/changeStatus', {}, {headers: headers, params: params});
+  }
+
+  addMeeting(meeting: any): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.baseUrl, meeting, {headers, responseType: 'text' as 'json' });
   }
 
 }

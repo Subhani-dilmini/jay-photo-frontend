@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
 import { FileUploadService } from '../../services/file-upload.service';
+import { MeetingService } from '../../services/meeting.service';
 
 @Component({
   selector: 'app-client-account',
@@ -21,6 +22,7 @@ export class ClientAccountComponent implements OnInit {
     private authService: AuthService,
     private userService: UserService,
     private uploadService: FileUploadService,
+    private meetingService: MeetingService,
     private route: ActivatedRoute,
   ) { }
 
@@ -30,6 +32,7 @@ export class ClientAccountComponent implements OnInit {
     this.role = this.authService.getRole();
     this.getUserDetails();
     this.getCategoryImage().then(data => this.imageUrl = data);
+    this.getPendingMeetingCount();
   }
 
   getUserDetails() {
@@ -41,6 +44,12 @@ export class ClientAccountComponent implements OnInit {
 
   async getCategoryImage(): Promise<any> {
     return await this.uploadService.getFileUrlByFileName(this.userId, 'images/user');
+  }
+
+  getPendingMeetingCount() {
+    this.meetingService.getPendingMeetingCountByUser(this.userId).subscribe(data => {
+      this.userDetails.pendingMeetingCount = data.count;
+    });
   }
 
 }

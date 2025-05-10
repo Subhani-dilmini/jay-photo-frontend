@@ -59,7 +59,7 @@ export const routes: Routes = [
     component: ReqSessoinAppointmentComponent
   },
   {
-    path: 'request-meeting-appointment',
+    path: 'request-meeting-appointment/:id',
     component: ReqMeetingAppointmentComponent
   },
   {
@@ -107,7 +107,7 @@ export const routes: Routes = [
     component: UpcomingSessionAppointmentsComponent
   },
   {
-    path: 'upcoming-meeting-appointments',
+    path: 'upcoming-meeting-appointments/:id',
     component: UpcomingMeetingAppointmentsComponent
   },
   {
