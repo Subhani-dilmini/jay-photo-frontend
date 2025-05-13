@@ -122,7 +122,7 @@ export class ReqSessoinAppointmentComponent implements OnInit {
     console.log(this.sessionForm.value);
     this.sessionService.addSession(this.sessionForm.value).subscribe({
       next: () => {
-        this.router.navigate(['/upcoming-session-appointments']);
+        this.router.navigate(['/upcoming-session-appointments', this.userId]);
       },
       error: err => {
         console.log(err);
