@@ -13,6 +13,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class UpcomingMeetingAppointmentsComponent implements OnInit{
   upcommingMeetings: any[] = [];
   userId: any;
+  role: any;
  
 
   constructor(
@@ -26,6 +27,7 @@ export class UpcomingMeetingAppointmentsComponent implements OnInit{
 
   ngOnInit() {
     this.userId = this.route.snapshot.paramMap.get('id') || this.authService.getCurrentUserId();
+    this.role = this.authService.getRole();
     this.getPendingMeetings();
   }
 
@@ -38,8 +40,6 @@ export class UpcomingMeetingAppointmentsComponent implements OnInit{
         console.log(err)
       }
     });
-  }
-
-  
+  }  
 
 }

@@ -28,30 +28,32 @@
 
         <div formArrayName="packageItems">
           <div id="items-container">
-            
+
             <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i" class="row m-2">
               <div class="col-6">
                 <select class="form-control" id="availableItemInput " formControlName="item">
                   <option value="" disabled selected> Select an item </option>
-                  <option *ngFor="let availableItem of availableItems" [ngValue]="availableItem"> {{ availableItem.name }} </option>
+                  <option *ngFor="let availableItem of availableItems" [ngValue]="availableItem"> {{ availableItem.name
+                    }} </option>
                 </select>
               </div>
 
 
               <div class="col-6">
-                <input class="form-control" type="number" id="itemQuantityInput " formControlName="quantity" min="1" placeholder="Enter quantity">
+                <input class="form-control" type="number" id="itemQuantityInput " formControlName="quantity" min="1"
+                  placeholder="Enter quantity">
               </div>
-              
+
 
               <div class="mb-3"></div>
-          <!--
+              <!--
                 <label class="form-label" id="package-item-heading">Items</label>
                 <div class="text-end mt-2">
                   <input type="text" class="form-control me-2" id="item" formControlName="name" placeholder="Enter item">  -->
 
-                  <button type="button" class="btn btn-success btn-sm" id="btn-plus" (click)="addItem()">+</button>
-                </div>
-               <!--<div id="items-container">
+              <button type="button" class="btn btn-success btn-sm" id="btn-plus" (click)="addItem()">+</button>
+            </div>
+            <!--<div id="items-container">
                     The first input field 
                     <div class="d-flex mb-2 align-items-center">
                         <input type="text" class="form-control me-2" id="item" placeholder="Enter item">
@@ -59,24 +61,24 @@
                     </div>
                 </div> -->
 
-            </div> 
-              <div class="row m-3"></div>
-              <button class="btn btn-primary container-fluid"
-                  id="add-package-btn" type="submit" (click)="onSubmit()"> Add Package </button> 
-              <div class="row m-4"></div>
-            </div>
-            <div class="col-2"></div>
-            <div class="row m-3"></div>
-          
+          </div>
+          <div class="row m-3"></div>
+          <button class="btn btn-primary container-fluid" id="add-package-btn" type="submit" (click)="onSubmit()"> Add
+            Package </button>
+          <div class="row m-4"></div>
+        </div>
+        <div class="col-2"></div>
+        <div class="row m-3"></div>
 
 
-         <!-- </div>-->
-       
+
+        <!-- </div>-->
+
       </form>
     </div>
-    </div>
-    <div class="row m-5"></div>
-    <div class="row m-5"></div>
+  </div>
+  <div class="row m-5"></div>
+  <div class="row m-5"></div>
 </body>
 
 </html>

@@ -49,13 +49,16 @@
             <div class="col-1"></div>
         </div>
     }
+
+     @if(role === 'customer') {
         <div class="row m-2">
             <div class="col-7"></div>
             <div class="col-5">
-                <a href="#" class="nav-link text-white" [routerLink]="['/request-meeting-appointment', userId]"> <button class="btn" id="btn-request-appointment"> Request Appointment </button>  </a>
+                <a href="#" class="nav-link text-white" [routerLink]="['/request-meeting-appointment']"> <button class="btn" id="btn-request-appointment"> Request Appointment </button>  </a>
             </div>
         </div>
         <div class="row m-5"></div>
+    }
     </body>
     </html>
     

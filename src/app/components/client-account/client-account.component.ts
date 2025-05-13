@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
 import { FileUploadService } from '../../services/file-upload.service';
 import { MeetingService } from '../../services/meeting.service';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-client-account',
@@ -23,6 +24,7 @@ export class ClientAccountComponent implements OnInit {
     private userService: UserService,
     private uploadService: FileUploadService,
     private meetingService: MeetingService,
+    private sessionservice: SessionService,
     private route: ActivatedRoute,
   ) { }
 
@@ -33,6 +35,8 @@ export class ClientAccountComponent implements OnInit {
     this.getUserDetails();
     this.getCategoryImage().then(data => this.imageUrl = data);
     this.getPendingMeetingCount();
+    this.getUpcomingSessionCount();
+    this.getPastSessionCount();
   }
 
   getUserDetails() {
@@ -51,5 +55,18 @@ export class ClientAccountComponent implements OnInit {
       this.userDetails.pendingMeetingCount = data.count;
     });
   }
+  getUpcomingSessionCount() {
+    this.sessionservice.getUpcomingSessionCountByUser(this.userId).subscribe(data => {
+      this.userDetails.upcomingSessionCount = data.count;
+    });
+  }
 
-}
+  getPastSessionCount() {
+    this.sessionservice.getPastSessionCountByUser(this.userId).subscribe(data => {
+      this.userDetails.pastSessionCount = data.count;
+    });
+  }
+
+
+
+  }

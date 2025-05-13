@@ -33,6 +33,9 @@
                 {
                    <a href="#" [routerLink]="['/blog']"> <button class="btn btn-primary container-fluid" id="btn-update-package"
                         type="update">Update Package</button> </a>
+                } @else {
+                    <a href="#" [routerLink]="['/request-session-appointment']" [queryParams]="{ packageId: package.packageId}"> <button class="btn btn-primary container-fluid" id="btn-update-package"
+                        type="update">Book</button> </a>
                 }
             </div>
         </div>
@@ -139,10 +142,19 @@
         <div class="col-3"></div>
     </div>
 
+     <div class="row m-5">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <a href="#" [routerLink]="['/package-items']"> <button class="btn" id="btn-add-items"> Add Package Items  </button>
+            </a>
+        </div>
+        <div class="col-3"></div>
+    </div>
+
     <div class="row m-5">
         <div class="col-3"></div>
         <div class="col-6">
-            <a href="#" [routerLink]="['/package-items']"> <button class="btn" id="btn-add-items"> Add Additional Items  </button>
+            <a href="#" [routerLink]="['/additional-items']"> <button class="btn" id="btn-add-items"> Add Additional Items  </button>
             </a>
         </div>
         <div class="col-3"></div>

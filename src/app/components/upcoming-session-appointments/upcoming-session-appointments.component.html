@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div class="row m-5"></div>
     <div class="row m-5">
         <p class="justify-content-center text-center" id="heading"> UPCOMING SESSION <br> APPOINTMENTS </p>
     </div>
+    @for(session of upcommingSessions; track session) {
     <div class="row m-5">
         <div class="col-1"></div>
         <div class="col-10">
@@ -18,59 +21,63 @@
                     <div class="col-2"></div>
                     <div class="col-9">
                         <div class="row m-4"></div>
-                        <div class="row m-1"id="package-div">
-                            <div class="col-5 justify-content-start  info-title" >Package :</div>
-                            <div class="col-7   info-value" id="package">One day wedding package  </div>
+                        <div class="row m-1" id="package-div">
+                            <div class="col-5 justify-content-start  info-title">Package :</div>
+                            <div class="col-7   info-value" id="package"> {{ session.aPackage.name }} </div>
                         </div>
                         <div class="row m-1" id="number-div">
                             <div class="col-5 info-title">Date :</div>
-                            <div class="col-7 info-value" id="Date">2025/03/20  </div>
+                            <div class="col-7 info-value" id="Date"> {{ session.date }} </div>
                         </div>
                         <div class="row m-1" id="time-div">
                             <div class="col-5 info-title">Time :</div>
-                            <div class="col-7 info-value" id="Date">3.00PM  </div>
+                            <div class="col-7 info-value" id="Date"> {{ session.time }} </div>
                         </div>
                         <div class="row m-1" id="place-div">
                             <div class="col-5 info-title">Place : </div>
-                            <div class="col-7 info-value" id="place">Avenro Hotel,Kamburupitiya </div>
+                            <div class="col-7 info-value" id="place"> {{ session.place }} </div>
                         </div>
-                        <div class="row m-1"id="event-div">
-                            <div class="col-5  justify-content-start info-title" >Event : </div>
-                            <div class="col-7  justify-content-end info-value" id="event-type">Wedding Shoot  </div>
+                        <div class="row m-1" id="event-div">
+                            <div class="col-5  justify-content-start info-title">Event : </div>
+                            <div class="col-7  justify-content-end info-value" id="event-type"> {{ session.event}}
+                            </div>
                         </div>
                         <div class="row m-1" id="sessionStatus-div">
                             <div class="col-5 info-title">Session status :</div>
-                            <div class="col-7 info-value" id="sessionStatus"> confirmed  </div>
+                            <div class="col-7 info-value" id="sessionStatus"> {{ session.sessionStatus }} </div>
                         </div>
                         <div class="row m-1" id="paymentStatus-div">
                             <div class="col-5 info-title">Payment Status : </div>
-                            <div class="col-7 info-value" id="paymentStatus"> Pending Payment </div>
+                            <div class="col-7 info-value" id="paymentStatus"> {{ session.paymentStatus }} </div>
                         </div>
-                        <div class="row m-1"id="amount-div">
+                        <div class="row m-1" id="amount-div">
                             <div class="col-5 info-title">Amount : </div>
-                            <div class="col-7 info-value" id="amount">Rs.100,000.00  </div>
+                            <div class="col-7 info-value" id="amount"> {{ session.amount | currency : 'LKR'}} </div>
                         </div>
                     </div>
                     <div class="col-1"></div>
                 </div>
-        
+
                 <div class="row m-2">
                     <div class="col-7"></div>
                     <div class="col-5">
-                        <button class="btn" id="btn-Payment"> Payment </button>
+                        <button class="btn" id="btn-Payment" (click)="payNow(session)"> Pay Now </button>
                     </div>
                 </div>
                 <div class="row mt-3"></div>
             </div>
-        </div>        
+        </div>
         <div class="col-1"></div>
     </div>
+    }
     <div class="row m-2">
         <div class="col-7"></div>
         <div class="col-5">
-            <a href="#" class="nav-link text-white" [routerLink]="['/request-session-appointment']"> <button class="btn" id="btn-request-appointment"> Request Appointment </button> </a>
+            <a href="#" class="nav-link text-white" [routerLink]="['/request-session-appointment']"> <button class="btn"
+                    id="btn-request-appointment"> Request Appointment </button> </a>
         </div>
     </div>
     <div class="row m-5"></div>
 </body>
+
 </html>

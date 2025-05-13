@@ -10,7 +10,7 @@
 
 <body>
   <div class="row m-5"> </div>
-  <div class="row mt-5 justify-content-center" id="add-package-head"> ADD Package Items</div>
+  <div class="row mt-5 justify-content-center" id="add-package-head"> Add {{ itemType }} Items</div>
 
   <div class="row m-5">
     <div class="col-2"></div>
@@ -21,9 +21,10 @@
         <label for="packageTitle" class="form-label" id="package-title-heading"> Item : </label>
         <input class="form-control" type="text" id="packageItemTitle" formControlName="name">
 
-        <label for="packagePrice" class="form-label" id="package-price-heading">price :</label>
-        <input class="form-control" type="text" id="packageItemPrice" formControlName="price">
-
+        @if(itemType == "Additional"){
+          <label for="packagePrice" class="form-label" id="package-price-heading">price :</label>
+          <input class="form-control" type="text" id="packageItemPrice" formControlName="price">
+        }
 
         <div class="row m-3"></div>
         <button class="btn btn-primary container-fluid" id="add-package-item-btn" type="submit" (click)="onSubmit()"> Add Package Item </button>

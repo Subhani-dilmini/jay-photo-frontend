@@ -26,6 +26,12 @@ export class PackageService {
     return this.http.get(this.baseUrl + '/availableItems', {headers});
   }
 
+  getAdditionalItems(): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.baseUrl + '/additional-items', {headers});
+  }
+
   addPackage(data: any): Observable<any> {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -35,7 +41,13 @@ export class PackageService {
   addPackageItems(data: any): Observable<any> {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post(this.baseUrl + '/items', data, {headers});
+    return this.http.post(this.baseUrl + '/package-items', data, {headers});
+  }
+
+  addAdditionalItems(data: any): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.baseUrl + '/additional-items', data, {headers});
   }
 }
 

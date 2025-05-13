@@ -10,7 +10,7 @@
 <body>
     <div class="row m-5"></div>
     <div class="row m-5">
-        <p class="justify-content-center text-center" id="heading"> {{role === 'customer' ? 'MY' : 'CLIENT'}} ACCOUNT </p>
+        <p class="justify-content-center text-center" id="heading"> {{role === 'admin' && isMyProfile ? 'MY' : 'CLIENT'}} ACCOUNT </p>
     </div>
     <div class="row m-5">
         <div class="col-1"></div>
@@ -55,7 +55,6 @@
         <div class="col-1"></div>
     </div>
     
-
     <div class="row m-3 justify-content-center text-center" >
         <h1 id="appointments"> APPOINTMENTS </h1>
     </div>
@@ -67,12 +66,12 @@
                     <p id="Upcoming-Session-Appointments"> Upcoming Session Appointments </p> 
                 </div>
                 <div class="row m-3" >
-                    <p id="up-session-value"> 01 </p>
+                    <p id="up-session-value"> {{ userDetails.upcomingSessionCount || 0 }} </p>
                 </div>
                 <div class="row m-3">
                     <div class="col-6"></div>
                     <div class="col-5">
-                       <a href="#" [routerLink]="['/upcoming-session-appointments']"> <button class="btn" id="btn-see-more"> see more </button> </a>
+                       <a href="#" [routerLink]="['/upcoming-session-appointments', userId]"> <button class="btn" id="btn-see-more"> see more </button> </a>
                     </div>
                     <div class="col-1"></div>
                 </div>
@@ -104,16 +103,16 @@
                         <p id="past-session"> Past Session </p>
                     </div>
                     <div class="row m-3 justify-content-center text-center" >
-                        <p id="past-session-value"> 02 </p>
+                        <p id="past-session-value"> {{ userDetails.pastSessionCount }} </p>
                     </div>
                     <div class="row m-3">
-                        <a href="#" [routerLink]="['/past-sessoins']"> <button class="btn" id="btn-see-more"> see more </button> </a>
+                        <a href="#" [routerLink]="['/past-sessoins', userId]"> <button class="btn" id="btn-see-more"> see more </button> </a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-1"></div>
-    </div>    
+    </div>
 
     <div class="row m-5">
         <div class="col-4">
