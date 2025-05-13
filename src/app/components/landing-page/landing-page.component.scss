@@ -107,33 +107,35 @@ body {
 #clients {
     background: linear-gradient(to right, #000000, #370101);
     height: 350px;
+    border-radius: 20px;
 }
 
 #test {
-    color: rgb(255, 169, 129);
-    font-size: 2em;
+    color: rgb(78, 13, 8);
+    font-size: 3.5em;
     text-shadow: 4px 4px 4px rgb(224, 99, 41);
     font-family: 'roboto flex';
     text-align: center;
 }
 
 #what-client {
-    color: rgb(233, 148, 11);
-    font-size: 4em;
+    color: rgb(112, 13, 71);
+    text-shadow: 4px 4px 4px rgb(232, 121, 239);
+    font-size: 3.3em;
     font-family: 'roboto flex';
     text-align: center;
 }
 
 #feedback {
-    color: #fefefe;
+    color: #f3c7c7;
     font-size: 1.5em;
     font-family: 'roboto flex';
     text-align: center;
 }
 
 #client-name {
-    color: rgb(255, 255, 255);
-    font-size: 1.5em;
+    color: rgb(209, 102, 238);
+    font-size: 2em;
     font-family: 'roboto flex';
     text-align: center;
 }
@@ -161,14 +163,15 @@ body {
 
 #footer-head {
     text-align: center;
-    font-size: 2em;
-    color: rgb(17, 184, 104);
-    text-shadow: 4px 4px 6px rgb(17, 184, 104);
+    font-size: 2.5em;
+    color: rgb(13, 141, 34);
+    // color: rgb(17, 184, 104);
+    text-shadow: 4px 4px 10px rgb(8, 143, 78);
 }
 
 #footer-content {
     text-align: center;
-    color: rgb(139, 240, 225);
+    color: rgb(139, 210, 240);
     font-size: 1.3em;
     font-family: 'roboto flex';
     text-align: left;

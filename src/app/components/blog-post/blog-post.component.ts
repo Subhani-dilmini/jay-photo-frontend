@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
+import { CommonModule, NgFor } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-blog-post',
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './blog-post.component.html',
   styleUrl: './blog-post.component.scss'
 })

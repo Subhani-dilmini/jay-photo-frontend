@@ -10,6 +10,7 @@
 <body>
     <div class="row m-3"></div>
     <div class="row mt-5 justify-content-center" id="package-h1"> Packages </div>
+    <div class="row m-3"></div>
 
 
     <div class="row mt-1">
@@ -31,12 +32,20 @@
             <div class="row m-3"></div>
                 @if(role === 'admin')
                 {
-                   <a href="#" [routerLink]="['/blog']"> <button class="btn btn-primary container-fluid" id="btn-update-package"
+                     <div class="col-1"></div>
+                    <div class="col-8">
+                   <a href="#" [routerLink]="['/add-package']"> <button class="btn btn-primary container-fluid" id="btn-update-package"
                         type="update">Update Package</button> </a>
-                } @else {
+<div class="col-2">
+                        <a href="#" [routerLink]="['/add-edit-album']">
+                            <i class="fas fa-trash-alt text-danger" style="cursor: pointer;" id="dlt-icon"></i>
+                        </a>
+                    </div>
+                    <div class="col-1"></div>
+                    } @else {
                     <a href="#" [routerLink]="['/request-session-appointment']" [queryParams]="{ packageId: package.packageId}"> <button class="btn btn-primary container-fluid" id="btn-update-package"
                         type="update">Book</button> </a>
-                }
+                    }
             </div>
         </div>
             <div class="row m-5"></div>           

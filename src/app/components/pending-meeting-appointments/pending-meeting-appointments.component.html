@@ -26,6 +26,10 @@
                             <div class="col-5 justify-content-start  info-title">Name :</div>
                             <div class="col-7   info-value" id="name"> {{ pendingMeeting.userName }} </div>
                         </div>
+                        <div class="row m-1" id="place-div">
+                            <div class="col-5 info-title">Place : </div>
+                            <div class="col-7 info-value" id="place"> {{ pendingMeeting.meetingMode }} </div>
+                        </div>
                         <div class="row m-1" id="number-div">
                             <div class="col-5 info-title">Date :</div>
                             <div class="col-7 info-value" id="Date"> {{ pendingMeeting.date + " " + pendingMeeting.time
@@ -37,17 +41,13 @@
                         </div>
                         <div class="row m-1" id="event-div">
                             <div class="col-5  justify-content-start info-title">Event : </div>
-                            <div class="col-7  justify-content-end info-value" id="event-type"> </div>
+                            <div class="col-7  justify-content-end info-value" id="event-type"> {{ pendingMeeting.event }}  </div>
                         </div>
-                        <div class="row m-1" id="description-div">
-                            <div class="col-5 info-title">Description :</div>
-                            <div class="col-7 info-value" id="description">
-                            </div>
-                        </div>
+                        <!--
                         <div class="row m-1" id="status-div">
                             <div class="col-5 info-title">Status : </div>
-                            <div class="col-7 info-value" id="status"> </div>
-                        </div>
+                            <div class="col-7 info-value" id="status"> {{ pendingMeeting.meetingStatus }} </div>
+                        </div>-->
                     </div>
                     <div class="col-1"></div>
                 </div>

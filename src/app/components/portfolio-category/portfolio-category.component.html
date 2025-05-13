@@ -15,7 +15,7 @@
 		@for(album of category.albums; track album.albumId) {
 
 		<!--<a href="#" [routerLink]="['portfolio-hiran&nathasha']">-->
-		<div class="col-5" id="vertical">
+		<div class="col-3" id="vertical">
 			<!--<div class="row m-3"></div>-->
 			<a href="#" [routerLink]="['/portfolio-album', album.albumId]">
 				<img src="{{ album.albumImage ? album.albumImage : '/default-placeholder.png'}}" alt="portfolio"
@@ -26,7 +26,9 @@
 				{{ album.albumName }}
 				@if(role === 'admin'){
 				<span>
-					<i class="fas fa-edit text-primary mx-2" style="cursor: pointer;" (click)="onChangeImage(album.albumId)"></i>
+					<a href="#" [routerLink]="['/add-edit-album']">
+                        <i class="fas fa-edit text-primary mx-2" style="cursor: pointer;"></i>
+					</a>					
 					<i class="fas fa-trash-alt text-danger" style="cursor: pointer;" (click)="onDeleteAlbum(album.albumId)"></i>
 				</span>
 				}
@@ -37,6 +39,8 @@
 		<div class="col-1"></div>
 		}
 	</div>
+
+	<div class="row m-5"></div>
 	<!--</a> -->
 	<!-- <div class="col-1"></div>
             <div class="col-6" id="horizontal">
@@ -90,29 +94,38 @@
         <div class="row m-3"></div>
     </div> -->
 
+<div class="row m-5">
+	<div class="col-1"></div>
+	<div class="col-10">
+		@if(role === 'admin'){
+		<div class="row m-5" id="add-album">
+			<form [formGroup]="addAlbumForm">
+					<div class="row m-3 justify-content-center"></div>
 
-	@if(role === 'admin'){
-	<div class="row m-5">
-		<form [formGroup]="addAlbumForm">
-			<div class="col-2"></div>
-			<div class="col-8" id="add-album">
-				<div class="row m-3 justify-content-center"></div>
-				<label for="albumTitle" class="form-label" id="album-title-heading"> Album Name : </label>
-				<input class="form-control" type="text" id="albumTitle" formControlName="albumName">
-				<label for="album-update-date" class="form-label" id="album-update-date-heading"> Published Date : </label>
-				<input class="form-control" type="date" id="album-update-date" formControlName="publishedDate">
-				<label for="imageUpload" class="form-label" id="upload-img-heading">Upload Key Image</label>
-				<input class="form-control" type="file" id="imageUpload" accept="image/*" (change)="onFileSelected($event)">
-				<div class="row m-3"></div>
-				<button class="btn btn-primary container-fluid" id="add-album-btn" type="button" (click)="onSubmit()">Add
-					Album</button>
-				<div class="row m-4"></div>
-			</div>
-		</form>
-		<div class="col-2"></div>
-		<div class="row m-3"></div>
-	</div>
+					<label for="albumTitle" class="form-label" id="album-title-heading"> Album Name : </label>
+					<input class="form-control" type="text" id="albumTitle" formControlName="albumName">
+					
+					<label for="album-update-date" class="form-label" id="album-update-date-heading"> Published Date : </label>
+					<input class="form-control" type="date" id="album-update-date" formControlName="publishedDate">
+
+					<label for="imageUpload" class="form-label" id="upload-img-heading">Upload Key Image</label>
+					<input class="form-control" type="file" id="imageUpload" accept="image/*" (change)="onFileSelected($event)">
+
+					<div class="row m-3"></div>
+
+					<button class="btn btn-primary container-fluid" id="add-album-btn" type="button" (click)="onSubmit()">Add Album</button>
+					<div class="row m-4"></div>
+			</form>
+			<div class="row m-3"></div>
+		</div>
 	}
+	</div>
+	<div class="col-1"></div>
+</div>
+
+
+
+	
 
 
 

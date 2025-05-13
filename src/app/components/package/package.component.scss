@@ -24,7 +24,14 @@ body {
 
 }
 
-
+#dlt-icon
+{
+    font-size: 3.5em;
+    color: #610909!important;
+    // margin-left: 10px;
+    // margin-top: 10px;
+    cursor: pointer;
+}
 #package-container
 {
     display: flex;
@@ -33,7 +40,7 @@ body {
     height: 100vh;
     /* Ensures the container takes the full height of the viewport */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
     /* Adds some padding to the sides */
     background: linear-gradient(to right, #112777d1, #057f95da);
     border-radius: 15px;

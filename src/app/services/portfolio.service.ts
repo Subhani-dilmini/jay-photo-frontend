@@ -42,4 +42,9 @@ export class PortfolioService {
     return this.http.post(this.baseUrl + 'categories' , category , {headers , responseType: 'text' as 'json' });
   }
    
+  getCategoryDetails(id: number): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.baseUrl + 'categories/' + id , {headers}); 
+  }
 }

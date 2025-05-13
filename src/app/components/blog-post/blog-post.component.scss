@@ -45,12 +45,27 @@ body {
 
 #blog-content
 {
-    padding-left: 150px;    
-    padding-right: 150px;
+    padding-left: 50px;    
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     border-radius: 5px;
     font-family: cursive;
-    background-color: rgba(0, 0, 0, 0.571);
+    font-size: 1.7em;
+     background : linear-gradient(to bottom right, #30a0bcbd, #5ec191df)!important;
+     color: rgb(0, 0, 0);
     
+}
+
+#blog-publishedDate
+{
+    padding:2px;    
+    margin-top: 0cm;
+    border-radius: 5px;
+    font-family: cursive;
+    font-size: 2em;
+    background : linear-gradient(to bottom right, #30a0bcbd, #8cdcb4df)!important;
+    color: #000;
 }
 
 p{

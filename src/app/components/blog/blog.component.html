@@ -25,10 +25,10 @@
             <div class="row m-2" id="blog-details"></div>
             
                      
-                    <div class="row mt-3 justify-content-center text-center" id="blog-content" class="blog-section"> <h1> {{blog.description}} </h1>  </div>
+                    <!-- <div class="row mt-3 justify-content-center text-center blog-section" id="blog-content">  {{blog.description}}  </div>
                     <div class="row m-1"></div>
-                    <div class="row mt-3 justify-content-center text-center" id="blog-publishedDate" class="blog-section"> <h1> {{ blog.publishedDate | date: 'yyyy-MM-dd' }} </h1>  </div>
-                    <div class="row m-1"></div>                  
+                    <div class="row mt-3 justify-content-center text-center blog-section" id="blog-publishedDate" > <b> {{ blog.publishedDate | date: 'yyyy-MM-dd' }} </b>  </div>
+                    <div class="row m-1"></div>                   -->
               
             <a href="#" [routerLink]="['/blog-post', blog.blogId]"> <button class="btn btn-primary mt-3" id="btn-see-more"> Read More</button> </a>
                 <div class="row mt-3"></div>
@@ -77,7 +77,7 @@
             </div>
         </div>
     </div>
--->
+
 
     <div class="row justify-content-center container-fluid">
         <div class="col-6" id="blog-section-left">
@@ -108,7 +108,7 @@
                 <div class="row mt-3"></div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -134,8 +134,8 @@
         </div>
     }
 
-
-
+<div class="row m-5 "></div>
+    
 
 
 </body>

@@ -19,6 +19,27 @@
                         <div class="col-2"></div>
                         <div class="col-9">
                             <div class="row m-4"></div>
+                            <div class="row m-1" id="package-div">
+                                <div class="col-5 justify-content-start  info-title">Name :</div>
+                                <div class="col-7   info-value" id="name"> {{ meeting.userName }} </div>
+                            </div>
+                            <div class="row m-1" id="place-div">
+                                <div class="col-5 info-title">Place : </div>
+                                <div class="col-7 info-value" id="place"> {{ meeting.meetingMode }}</div>
+                            </div>
+                            <div class="row m-1" id="number-div">
+                                <div class="col-5 info-title">Date :</div>
+                                <div class="col-7 info-value" id="Date"> {{ meeting.date + " " + meeting.time  }} </div>
+                            </div>
+                            <div class="row m-1" id="place-div">
+                                <div class="col-5 info-title">Place : </div>
+                                <div class="col-7 info-value" id="place">  {{ meeting.place }}  </div>
+                            </div>
+                            <div class="row m-1" id="event-div">
+                                <div class="col-5  justify-content-start info-title">Event : </div>
+                                <div class="col-7  justify-content-end info-value" id="event-type">  {{ meeting.event }}  </div>
+                            </div>
+                            <!--
                             <div class="row m-1"id="package-div">
                                 <div class="col-5 justify-content-start  info-title" >Date :</div>
                                 <div class="col-7   info-value" id="Date"> {{ meeting.date + " " + meeting.time
@@ -39,7 +60,7 @@
                             <div class="row m-1" id="description-div">
                                 <div class="col-5 info-title">status :</div>
                                 <div class="col-7 info-value" id="description"> {{ meeting.meetingStatus }}  </div>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="col-1"></div>
                     </div>

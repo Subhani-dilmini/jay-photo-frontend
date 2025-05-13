@@ -13,28 +13,41 @@
 
 	<div class="row m-5">
 		@for(image of album.images; track image) {
-		<div class="col-5" id="vertical" style="position: relative;">
+		<div class="col-5" id="vertical" >
 			<img src="{{ image }}" alt="portfolio" class="img-fluid w-100 rounded" id="row-1-img-1" style="display: block;" />
 
-			@if(role === 'admin'){
-			<!-- Delete Icon (positioned inside image) -->
-			<i class="fas fa-trash-alt text-danger" title="Delete Photo" (click)="onDeleteImage(image)" style="
-                    position: absolute;
-                    bottom: 10px;
-                    right: 10px;
-                    font-size: 1.5rem;
-                    background: rgba(255, 255, 255, 0.7);
-                    padding: 6px;
-                    border-radius: 50%;
-                    cursor: pointer;
-                  ">
-			</i>
-			}
+            @if(role === 'admin'){
+				<div class="row m-3">
+					<i class="fas fa-trash-alt text-danger" style="cursor: pointer;" id="deletebtn" (click)="onDeleteImage(image)"></i>
+                </div>
+				}
+			
 		</div>
+        <div class="col-1" id="vertical" ></div>
 
 		}
 	</div>
+    <div class="row m-5"></div>
 
+
+
+<!-- 
+    <h1>
+                @if(role === 'admin'){
+                Delete Icon (positioned inside image) -->
+                <!-- <i class="fas fa-trash-alt text-danger" title="Delete Photo" (click)="onDeleteImage(image)" style="
+                                position: absolute;
+                                bottom: 10px;
+                                right: 10px;
+                                font-size: 1.5rem;
+                                background: rgba(255, 255, 255, 0.7);
+                                padding: 6px;
+                                border-radius: 50%;
+                                cursor: pointer;
+                              ">
+                </i>
+                }
+            </h1> -->
 	<!--
     <div class="row m-5 container-fluid" id="portfolio-category-big-small-row">
         <a href="#" [routerLink]="['portfolio-hiran&nathasha']">

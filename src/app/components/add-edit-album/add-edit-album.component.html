@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row m-5"></div>
+    <div class="row mt-5 justify-content-center" id="edit-album-head"> Edit Album </div>
+
+    <div class="row m-5">
+	<div class="col-1"></div>
+	<div class="col-10">
+		@if(role === 'admin'){
+		<div class="row m-5" id="add-album">
+			<form [formGroup]="addEditAlbumForm">
+					<div class="row m-3 justify-content-center"></div>
+
+					<label for="albumTitle" class="form-label" id="album-title-heading"> Album Name : </label>
+					<input class="form-control" type="text" id="albumTitle" formControlName="albumName">
+					
+					<label for="album-update-date" class="form-label" id="album-update-date-heading"> Published Date : </label>
+					<input class="form-control" type="date" id="album-update-date" formControlName="publishedDate">
+
+					<label for="imageUpload" class="form-label" id="upload-img-heading">Upload Key Image</label>
+					<input class="form-control" type="file" id="imageUpload" accept="image/*" (change)="onFileSelected($event)">
+
+					<div class="row m-3"></div>
+
+					<button class="btn btn-primary container-fluid" id="add-album-btn" type="button" >Add Album</button>
+					<div class="row m-4"></div>
+			</form>
+			<div class="row m-3"></div>
+		</div>
+	}
+	</div>
+	<div class="col-1"></div>
+</div>
+</body>
+</html>
