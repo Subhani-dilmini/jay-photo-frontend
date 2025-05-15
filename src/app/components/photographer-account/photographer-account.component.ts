@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { MeetingService } from '../../services/meeting.service';
+import { PdfService } from '../../services/pdf.service';
 
 @Component({
   selector: 'app-photographer-account',
@@ -17,7 +18,8 @@ export class PhotographerAccountComponent implements OnInit{
 
   constructor(
     private userService: UserService,
-    private meetingService: MeetingService
+    private meetingService: MeetingService,
+    private pdfService: PdfService
   ) {}
 
   ngOnInit() {
@@ -57,6 +59,10 @@ export class PhotographerAccountComponent implements OnInit{
         console.log(err)
       }
     });
+  }
+
+  downloadPdf() {
+    this.pdfService.generatePdf('dashboard-content', 'Appointment_Report');
   }
 
   selectCustomer(customer: any) {
