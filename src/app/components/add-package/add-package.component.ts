@@ -1,41 +1,96 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { FormBuilder,FormControl, FormGroup, ReactiveFormsModule, FormArray, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { PackageService } from '../../services/package.service';
 
 @Component({
   selector: 'app-add-package',
-  imports: [RouterModule],
+  standalone: true,
+  imports: [
+    FormsModule, 
+    RouterModule, 
+    CommonModule, 
+    ReactiveFormsModule
+  ],
   templateUrl: './add-package.component.html',
   styleUrl: './add-package.component.scss'
 })
+
 export class AddPackageComponent {
+ addPackageForm: FormGroup ;
+ PackageTitle: string = '';
+ Price: string = '';
+ availableItems: any[] = [];
+ errorMessage: string = ''; // Stores error messages
 
-  addItemField(): void {
-    const container = document.getElementById("items-container") as HTMLElement;
-    
-    // Create a div wrapper for new item
-    const itemDiv = document.createElement("div");
-    itemDiv.classList.add("d-flex", "mb-2", "align-items-center");
+ constructor(
+  private packageService: PackageService,
+  private formBuilder: FormBuilder,
+  private router: Router
+  ) {
+    this.addPackageForm = this.formBuilder.group({
+      name: new FormControl('', Validators.required),
+      price: new FormControl('', Validators.required),
+      packageItems: this.formBuilder.array([this.createItem()])
+    });
+  }
+ 
+ // List of items with quantity
+ itemList: { item: string, quantity: number }[] = [{ item: '', quantity: 1 }];
 
-    // Create input field
-    const input = document.createElement("input");
-    input.type = "text";
-    input.classList.add("form-control", "me-2");
-    input.placeholder = "Enter item";
+ ngOnInit() {
+  this.packageService.getAvailableItems().subscribe(data => {
+    this.availableItems = data;
+  })
+}
 
-    // Create "+" button
-    const addButton = document.createElement("button");
-    addButton.innerHTML = "+";
-    addButton.classList.add("btn", "btn-success", "btn-sm");
-    
-    // Explicitly define the event handler
-    addButton.addEventListener("click", this.addItemField);
+// Create a single item group
+createItem(): FormGroup {
+  return this.formBuilder.group({
+    item: ['', Validators.required],
+    quantity: [1, [Validators.required, Validators.min(1)]]
+  });
+}
 
-    // Append elements to div
-    itemDiv.appendChild(input);
-    itemDiv.appendChild(addButton);
+  // Access items as FormArray
+  get items(): FormArray {
+    return this.addPackageForm.get('packageItems') as FormArray;
+  }
 
-    // Append div to container
-    container.appendChild(itemDiv);
+getAvailableItems(){
+
+}
+
+ // Add new item to items array
+ addItem(): void {
+  this.items.push(this.createItem());
+}
+
+onSubmit() {
+  console.log(this.addPackageForm.value);
+    if(!this.addPackageForm.valid ){
+      return;
+    }
+
+  this.packageService.addPackage(
+    this.addPackageForm.value
+  ).subscribe({
+    next: (response: any) => {
+      console.log('Package created successfully');
+      this.router.navigate(['/packages']);
+      
+    },
+    error: (err: any) => {
+      console.log('Error Package creation', err);
+
+      this.errorMessage = 'Package creation failed. Try again.';
+      
+    }
+  });
 }
 
 }
+
+

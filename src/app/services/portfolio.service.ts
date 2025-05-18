@@ -23,5 +23,28 @@ export class PortfolioService {
     headers.append('Content-Type', 'application/json');
     return this.http.get(this.baseUrl + 'categories/' + id + '/albums', {headers});
   }
-  
+
+  getAlbumById(id: number): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.baseUrl + 'albums/' + id , {headers});
+  }
+
+  addAlbum(album: any, categoryId: number): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.baseUrl + 'categories/'+ categoryId + '/albums' , album , {headers , responseType: 'text' as 'json' });
+  }
+
+  addCategory(category: any): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.baseUrl + 'categories' , category , {headers , responseType: 'text' as 'json' });
+  }
+   
+  getCategoryDetails(id: number): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.baseUrl + 'categories/' + id , {headers}); 
+  }
 }

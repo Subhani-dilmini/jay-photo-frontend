@@ -1,10 +1,20 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
 
+export interface MyToken {
+  sub: string;
+  exp: number;
+  role: string;
+  email: string;
+  phoneNumber: string;
+  name  : string;
+  // add other fields you expect from your token
+}
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +26,7 @@ export class AuthService {
   errorMessage: string = '';
 
   baseUrl = 'http://localhost:8080/auth/';
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(@Inject(HttpClient) private http: HttpClient, private router: Router) { }
 
   login(username: string, password: string): Observable<any> {
     let params = new HttpParams()
@@ -66,6 +76,28 @@ export class AuthService {
   setLogged() {
     this.isLoggedSubject.next(true);
   }
+
+  decodeToken(): any {
+    const token = localStorage.getItem('token');
+    if(!token) return null;
+    const decodedToken = jwtDecode<MyToken>(token ? token : '');
+    return decodedToken;
+  }
+
+  getRole(): string | null {
+    if (this.decodeToken() == null) return null;
+    return this.decodeToken().role;
+  }
+
+  getCurrentUserId(): string | null {
+    if (this.decodeToken() == null) return null;
+    return this.decodeToken().id;
+  }
+
+
+
+
+
 
   
 }

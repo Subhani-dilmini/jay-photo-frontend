@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
+import { FileUploadService } from '../../services/file-upload.service';
+import { MeetingService } from '../../services/meeting.service';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-client-account',
@@ -7,6 +12,61 @@ import { RouterModule } from '@angular/router';
   templateUrl: './client-account.component.html',
   styleUrl: './client-account.component.scss'
 })
-export class ClientAccountComponent {
+export class ClientAccountComponent implements OnInit {
+  role: any;
+  userId: any;
+  userDetails: any;
+  imageUrl: any;
+  isMyProfile: boolean = false;
 
-}
+  constructor(
+    private authService: AuthService,
+    private userService: UserService,
+    private uploadService: FileUploadService,
+    private meetingService: MeetingService,
+    private sessionservice: SessionService,
+    private route: ActivatedRoute,
+  ) { }
+
+  ngOnInit(): void {
+    this.isMyProfile = this.route.snapshot.routeConfig?.path?.includes('my-account')!;
+    this.userId = this.route.snapshot.paramMap.get('id') || this.authService.getCurrentUserId();
+    this.role = this.authService.getRole();
+    this.getUserDetails();
+    this.getCategoryImage().then(data => this.imageUrl = data);
+    this.getPendingMeetingCount();
+    this.getUpcomingSessionCount();
+    this.getPastSessionCount();
+  }
+
+  getUserDetails() {
+    this.userService.getUserDetails(this.userId).subscribe(data => {
+      this.userDetails = data;
+
+    })
+  }
+
+  async getCategoryImage(): Promise<any> {
+    return await this.uploadService.getFileUrlByFileName(this.userId, 'images/user');
+  }
+
+  getPendingMeetingCount() {
+    this.meetingService.getPendingMeetingCountByUser(this.userId).subscribe(data => {
+      this.userDetails.pendingMeetingCount = data.count;
+    });
+  }
+  getUpcomingSessionCount() {
+    this.sessionservice.getUpcomingSessionCountByUser(this.userId).subscribe(data => {
+      this.userDetails.upcomingSessionCount = data.count;
+    });
+  }
+
+  getPastSessionCount() {
+    this.sessionservice.getPastSessionCountByUser(this.userId).subscribe(data => {
+      this.userDetails.pastSessionCount = data.count;
+    });
+  }
+
+
+
+  }

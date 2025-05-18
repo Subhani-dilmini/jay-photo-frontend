@@ -27,6 +27,10 @@ import { ConfirmedMeetingAppointmentsComponent } from './components/confirmed-me
 import { PendingSessionAppointmentsComponent } from './components/pending-session-appointments/pending-session-appointments.component';
 import { ConfirmedSessionAppointmentsComponent } from './components/confirmed-session-appointments/confirmed-session-appointments.component';
 import { AddPackageComponent } from './components/add-package/add-package.component';
+import { AddItemsComponent } from './components/add-items/add-items.component';
+import { SchedulerComponent } from './scheduler/scheduler.component';
+import { AddEditCategoryComponent } from './components/add-edit-category/add-edit-category.component';
+import { AddEditAlbumComponent } from './components/add-edit-album/add-edit-album.component';
 
 export const routes: Routes = [
   {
@@ -54,6 +58,10 @@ export const routes: Routes = [
     component: ResetPasswordComponent 
   },
   {
+    path: 'shedule',
+    component: SchedulerComponent 
+  },
+  {
     path: 'request-session-appointment',
     component: ReqSessoinAppointmentComponent
   },
@@ -70,39 +78,59 @@ export const routes: Routes = [
     component: PackageComponent
   },
   {
+    path: 'package-items',
+    component: AddItemsComponent
+  },
+  {
+    path: 'additional-items',
+    component: AddItemsComponent
+  },
+  {
     path: 'portfolio',
     component: PortfolioComponent
   },
   {
-    path: 'portfolio-category/:id',
+    path: 'portfolio-category/:id',  
     component: PortfolioCategoryComponent
   },
   {
-    path: 'portfolio-hiranNathasha',
+    path: 'add-edit-category',
+    component: AddEditCategoryComponent
+  },
+  {
+    path: 'portfolio-album/:id',
     component: PortfolioAlbumComponent
+  },
+  {
+    path: 'add-edit-album',
+    component: AddEditAlbumComponent
   },
   {
     path: 'blog',
     component: BlogComponent
   },
   {
-    path: 'blog-post-1',
+    path: 'blog-post/:id',
     component: BlogPostComponent
   },
   {
-    path: 'client-account',
+    path: 'client-account/:id',
     component: ClientAccountComponent
   },
   {
-    path: 'upcoming-session-appointments',
+    path: 'my-account',
+    component: ClientAccountComponent
+  },
+  {
+    path: 'upcoming-session-appointments/:id',
     component: UpcomingSessionAppointmentsComponent
   },
   {
-    path: 'upcoming-meeting-appointments',
+    path: 'upcoming-meeting-appointments/:id',
     component: UpcomingMeetingAppointmentsComponent
   },
   {
-    path: 'past-sessoins',
+    path: 'past-sessoins/:id',
     component: PastSessionComponent
   },
   {
@@ -111,6 +139,10 @@ export const routes: Routes = [
   },
   {
     path: 'add-blog',
+    component: AddBlogComponent
+  },
+  {
+    path: 'edit-blog',
     component: AddBlogComponent
   },
   {

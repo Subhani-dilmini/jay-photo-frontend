@@ -1,0 +1,107 @@
+body {
+    /*to set background image to the landing page*/
+    background-image: url("/portfolio-back.jpg");
+
+    background-size: cover;
+    /* ensures the image covers the entire background */
+    background-position: center;
+    /*centers the image */
+    background-repeat: no-repeat;
+    /* prevents tiling of the image */
+    /* height: 100vh;
+    
+    /* Ensures the body takes the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-attachment: fixed;
+    /* Removes default margin */
+    /* overflow: hidden; Prevents scrolling if the image overflows */
+
+
+}
+
+#edit-category-head
+{
+    font-size: 5em;
+    font-weight: bold;
+    color: rgb(40, 225, 151);
+    margin-top: 10%;
+}
+
+
+#add-category 
+{
+    
+    background: linear-gradient(to right, #77116bb9, #430595bf);
+    padding-right: 2%;
+    padding-left: 2%;
+    border-radius: 10px;
+}
+
+#category-title-heading, #upload-img-heading
+    {
+        font-size: 1.7em;
+        font-weight: bold;
+        color: rgb(252, 252, 252);
+    }
+    
+#categoryTitle
+    {
+        background-color: rgba(146, 231, 239, 0.792);
+        font-weight: bold;
+          border: rgb(5, 5, 86);
+
+    }
+
+#imageUpload
+    {
+        background-color: rgba(146, 231, 239, 0.792);
+        border: rgb(5, 5, 86);
+        font-weight: bold;
+
+    }
+
+#add-album-btn
+    {
+        background-color: rgb(13, 26, 101);
+        color: white;
+        font-size: 1.8em;
+        border-radius: 10px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font-weight: bold;
+    }    
+
+@media (max-width: 990px) {
+    .row > div {
+        width: 100%; /* Make each image container take full width */
+        flex: 0 0 100%; /* Force it to take the full row */
+        max-width: 100%; /* Ensure it spans the full width */
+    }
+
+    .row {
+        justify-content: center; /* Center align the images */
+        text-align: center;
+    }
+
+    img {
+        width: 100%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+
+    #birthday 
+    {
+        margin-bottom: 0px;
+    }
+    #preshoot 
+    {
+        margin-bottom: 50px;
+    }
+
+    #graduation
+    {
+        margin-bottom: 50px;
+    }
+}

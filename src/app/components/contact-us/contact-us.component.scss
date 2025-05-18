@@ -1,35 +1,107 @@
-body{
-    background: linear-gradient(to bottom, rgb(72, 2, 2), rgb(20, 4, 50));
+body {
+    /*to set background image to the landing page*/
+   background-image: url("/blog-back.jpg");
+
     background-size: cover;
     /* ensures the image covers the entire background */
     background-position: center;
+    /*centers the image */
+    background-repeat: no-repeat;
+    /* prevents tiling of the image */
+    /* height: 100vh;
+    
+    /* Ensures the body takes the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-attachment: fixed;
+    /* Removes default margin */
+    /* overflow: hidden; Prevents scrolling if the image overflows */
+
+
 }
 
-#contact-us-image
+#whole-page
 {
-    border-radius: 3%;
+    // display: flex;
+    justify-content: center!important;
+    align-items: center!important;
 }
+#personal-info {
+
+    /*to set background image to the landing page*/
+    background: linear-gradient(to right, #631177b0, #066070da);
+    border-radius: 15px;
+
+}
+
+#client-img
+{
+    width: 200px !important;
+    height: 200px !important;
+}
+
+#name
+{
+    font-family: cursive;
+    font-weight: bolder;
+    font-size: 3em;
+    color: black;
+}
+
+.info-title
+{
+    font-family: cursive;
+    font-size: 1.8em;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+#email, #phone-number, #address
+{
+    font-family: cursive;
+    font-size: 1.8em;
+    color: rgb(0, 0, 0);
+}
+
+#btn-edit-profile
+{
+    background-color: #880d86ae !important;
+    border: none;
+    color: rgb(0, 0, 0);
+    margin-left: 5%;
+    width: 90%;
+    font-size: 0.6em;
+    font-weight: bold;
+}
+
+// #contact-us-image
+// {
+//     border-radius: 3%;
+// }
 
 #contact-us
 {
-    align-items: start;
-    font-size: 3em;
-    color: white
+    align-items: center;
+    font-size: 7em;
+    text-shadow: 4px 4px 4px rgb(41, 178, 224);
+    color: rgb(39, 195, 145);
+    font-weight: bold;
 }
 
-#vist-us, #contact
-{
-    align-items: start;
-    font-size: 2em;
-    color: rgb(235, 82, 16)
-}
+// #vist-us, #contact
+// {
+//     align-items: start;
+//     font-size: 2em;
+//     color: rgb(235, 82, 16)
+// }
 
-p
-{
-    align-items: start;
-    font-size: 1.5em;
-    color: #ffffff
-}
+// p
+// {
+//     align-items: start;
+//     font-size: 1.5em;
+//     color: #ffffff
+// }
 
 #btn-mail
 {
