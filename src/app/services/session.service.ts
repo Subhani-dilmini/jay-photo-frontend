@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -43,5 +43,36 @@ export class SessionService {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.http.get(this.baseUrl + '/pastByUser/' + id, {headers});
+  }
+
+  getPendingSessionCount(): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.baseUrl + '/pendingCount', {headers});
+  }
+
+  getPendingSessions(): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.baseUrl + '/pending', {headers});
+  }
+
+  getConfirmedMeetingCount(): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.baseUrl + '/confirmedCount', {headers});
+  }
+
+  getConfirmedSessions(): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.baseUrl + '/confirmed', {headers});
+  }
+
+  changeSessionStatus(id: number, status: string): Observable<any> {
+      let headers = new HttpHeaders();
+      let params = new HttpParams().set('status', status);
+      headers.append('Content-Type', 'application/json');
+      return this.http.put(this.baseUrl + '/' + id + '/changeSessionStatus', {}, {headers: headers, params: params});
   }
 }

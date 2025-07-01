@@ -31,6 +31,7 @@ import { AddItemsComponent } from './components/add-items/add-items.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
 import { AddEditCategoryComponent } from './components/add-edit-category/add-edit-category.component';
 import { AddEditAlbumComponent } from './components/add-edit-album/add-edit-album.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 export const routes: Routes = [
   {
@@ -173,6 +174,10 @@ export const routes: Routes = [
     path: 'add-package',
     component: AddPackageComponent
     
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent
   }
   
 

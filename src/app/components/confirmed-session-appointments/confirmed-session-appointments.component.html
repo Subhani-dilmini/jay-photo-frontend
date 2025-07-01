@@ -10,6 +10,7 @@
     <div class="row m-5">
         <p class="justify-content-center text-center" id="heading"> CONFIRMED SESSION <br> APPOINTMENTS </p>
     </div>
+    @for(confirmedSession of confirmedSessions; track confirmedSession) {
     <div class="row m-5">
         <div class="col-1"></div>
         <div class="col-10">
@@ -20,27 +21,27 @@
                         <div class="row m-4"></div>
                         <div class="row m-1"id="package-div">
                             <div class="col-5 justify-content-start  info-title" >Name :</div>
-                            <div class="col-7   info-value" id="name">H.K.Hiran Madushanka  </div>
+                            <div class="col-7   info-value" id="name"> {{ confirmedSession.aPackage.name }} </div>
                         </div>
                         <div class="row m-1" id="number-div">
                             <div class="col-5 info-title">Date :</div>
-                            <div class="col-7 info-value" id="Date">2025/03/20  </div>
+                            <div class="col-7 info-value" id="Date"> {{ confirmedSession.date }} </div>
                         </div>
                         <div class="row m-1" id="place-div">
                             <div class="col-5 info-title">Place : </div>
-                            <div class="col-7 info-value" id="place">Avenro Hotel,Kamburupitiya </div>
+                            <div class="col-7 info-value" id="place"> {{ confirmedSession.place }} </div>
                         </div>
                         <div class="row m-1"id="event-div">
                             <div class="col-5  justify-content-start info-title" >Event : </div>
-                            <div class="col-7  justify-content-end info-value" id="event-type">Wedding Shoot  </div>
+                            <div class="col-7  justify-content-end info-value" id="event-type"> {{ confirmedSession.event }} </div>
                         </div>
                         <div class="row m-1" id="description-div">
                             <div class="col-5 info-title">Description :</div>
-                            <div class="col-7 info-value" id="description">Lorem ipsum dolor sit Lorem ipsum dolor sit  </div>
+                            <div class="col-7 info-value" id="description"> {{ confirmedSession.description }} </div>
                         </div>
                         <div class="row m-1" id="status-div">
-                            <div class="col-5 info-title">Status : </div>
-                            <div class="col-7 info-value" id="status">Pending Payment </div>
+                            <div class="col-5 info-title">Payment Status : </div>
+                            <div class="col-7 info-value" id="status"> {{ confirmedSession.paymentStatus }} </div>
                         </div>
                     </div>
                     <div class="col-1"></div>
@@ -51,6 +52,7 @@
         </div>        
         <div class="col-1"></div>
     </div>
+    }
     <!--
     <div class="row m-2">
         <div class="col-7"></div>
