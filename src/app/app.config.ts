@@ -11,6 +11,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { firebaseConfig } from './firebase-config';
+import {MatTableModule} from '@angular/material/table';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,6 +28,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideRouter(routes),
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    importProvidersFrom(MatTableModule)
   ],
 };

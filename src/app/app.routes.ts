@@ -31,7 +31,8 @@ import { AddItemsComponent } from './components/add-items/add-items.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
 import { AddEditCategoryComponent } from './components/add-edit-category/add-edit-category.component';
 import { AddEditAlbumComponent } from './components/add-edit-album/add-edit-album.component';
-import { PaymentComponent } from './components/payment/payment.component';
+// import { PaymentComponent } from './components/payment/payment.component';
+// import {ReportComponent} from './components/report/report.component';
 
 export const routes: Routes = [
   {
@@ -52,15 +53,15 @@ export const routes: Routes = [
   },
   {
     path: 'verification',
-    component: UserVerificationComponent 
+    component: UserVerificationComponent
   },
   {
     path: 'reset-password',
-    component: ResetPasswordComponent 
+    component: ResetPasswordComponent
   },
   {
     path: 'shedule',
-    component: SchedulerComponent 
+    component: SchedulerComponent
   },
   {
     path: 'request-session-appointment',
@@ -91,7 +92,7 @@ export const routes: Routes = [
     component: PortfolioComponent
   },
   {
-    path: 'portfolio-category/:id',  
+    path: 'portfolio-category/:id',
     component: PortfolioCategoryComponent
   },
   {
@@ -173,13 +174,24 @@ export const routes: Routes = [
   {
     path: 'add-package',
     component: AddPackageComponent
-    
+
   },
   {
-    path: 'payment',
-    component: PaymentComponent
-  }
-  
+    path: 'pie-chart',
+    loadComponent: () =>
+      import('./components/pie-chart/pie-chart.component').then(m => m.PieChartComponent)
+  },
+  {
+    path: 'bar-graph',
+    loadComponent: () =>
+      import('./components/bar-graph/bar-graph.component').then(m => m.BarGraphComponent)
+  },
+  {
+    path: 'session-table',
+    loadComponent: () =>
+      import('./components/session-table/session-table.component').then(m => m.SessionTableComponent)
+  },
+
 
 
 
